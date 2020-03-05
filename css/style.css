@@ -182,18 +182,12 @@ h3>.right {
 }
 
 .departments h3 {
-    margin: 0;
+    margin: 40px 0 0 0;
     width: 100%;
 }
 
-.departments.cn>ul>li:last-child,
-.departments.cn>ul>ul:last-child {
-    margin-bottom: 45px;
-}
-
-.departments.en>ul>li:last-child,
-.departments.en>ul>ul:last-child {
-    margin-bottom: 40px;
+.departments h3:first-of-type {
+    margin-top: 0;
 }
 
 
@@ -363,11 +357,11 @@ body {
         display: flex;
         flex-direction: column;
     }
-    #departments {
+    .departments {
         column-count: 1;
         /* width: 100%; */
     }
-    #departments summary {
+    .departments summary {
         text-overflow: ellipsis;
         white-space: nowrap;
     }
