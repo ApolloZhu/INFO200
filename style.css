@@ -1,0 +1,394 @@
+:root {
+    color-scheme: light dark;
+    --color: black;
+    --uw-purple: #4b2e83;
+    --uw-metal-gold: #85754d;
+    --uw-gold: #e8e3d3;
+    --summary-background-color: var(--uw-purple);
+    /* rgb(230, 230, 230); */
+}
+
+@media (prefers-color-scheme: dark) {
+     :root {
+        --color: white;
+        --background-color: rgb(28, 28, 30);
+        --dropdown-background-color: rgb(58, 58, 60);
+        /* --summary-background-color: var(--uw-metal-gold); */
+        /* rgb(80, 80, 80); */
+    }
+    .paginationjs .paginationjs-pages li>a {
+        color: white !important;
+        background-color: #333 !important;
+    }
+    .paginationjs .paginationjs-pages li.active>a {
+        background: white !important;
+        color: black !important;
+    }
+    /* a:link {
+        color: skyblue;
+    }
+    a:visited {
+        color: palevioletred;
+    } */
+    .ui.floating.dropdown .menu {
+        background-color: var(--dropdown-background-color) !important;
+        color: var(--color) !important;
+        border-color: white !important;
+        box-shadow: 0 1px 3px 0 rgba(221, 219, 217, .88), 0 1px 5px 0 rgba(221, 219, 217, .85) !important;
+    }
+    .ui.floating.dropdown .menu>* {
+        color: inherit !important;
+    }
+    .ui.floating.dropdown .menu>.item:hover,
+    .ui.floating.dropdown .menu>.item:focus {
+        background-color: darkslategray !important;
+    }
+    .ui.dropdown .menu>.item {
+        color: rgba(255, 255, 255, 0.9)
+    }
+    .ui.dropdown .menu>.active.item {
+        color: rgb(255, 255, 255)
+    }
+    .ui.dropdown .menu>.item>.description {
+        color: rgba(255, 255, 255, 0.6)
+    }
+    .ui.dropdown .menu>.item>.active.description {
+        color: rgba(255, 255, 255, 0.8)
+    }
+}
+
+body {
+    font-family: sans-serif;
+    color: var(--color);
+    background-color: var(--background-color);
+}
+
+.main {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 20% 80%
+}
+
+main {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+aside {
+    grid-column: 1;
+    grid-row: 1;
+    margin-right: 10px;
+}
+
+details {
+    color: white;
+}
+
+details ul,
+details form {
+    color: var(--color);
+}
+
+summary {
+    height: 40px;
+    box-sizing: border-box;
+    padding: 5px 10px;
+    background-color: var(--summary-background-color);
+    margin-bottom: 10px;
+}
+
+summary>h2 {
+    display: inline;
+}
+
+#departments>summary {
+    column-span: all;
+}
+
+select {
+    display: block;
+}
+
+option {
+    display: block;
+}
+
+
+/* The search field */
+
+#search {
+    margin-top: 30px;
+    height: 40px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#searchBar {
+    flex-grow: 8;
+    height: 40px;
+    border: none;
+    padding: 0 10px;
+    font-size: 120%;
+    border: solid darkgray 1px;
+    border-radius: 5px;
+}
+
+#searchButton {
+    flex-grow: 1.5;
+    height: 40px;
+    background-color: rgb(252, 184, 40);
+    /* color: white; */
+    /* #FEDD6C; */
+    color: black;
+    border-radius: 5px;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 120%;
+}
+
+#searchButton>i {
+    margin-right: 5px;
+}
+
+h3>emphasis {
+    color: gray;
+    font-style: italic;
+}
+
+h3>.right {
+    font-weight: normal;
+}
+
+.evaluation-entry {
+    font-family: monospace;
+    font-size: 120%;
+}
+
+.evaluation-entry>a {
+    text-decoration: none;
+}
+
+
+/* Default Department Selection */
+
+#departments {
+    column-count: 2;
+}
+
+#departments ul {
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+}
+
+#departments h2 {
+    column-span: all;
+    margin-top: 0;
+    height: 30px;
+}
+
+#departments ul>ul::before {
+    content: attr(aria-label);
+    display: list-item;
+    list-style-type: disc;
+    font-size: 100%;
+    font-weight: normal;
+    margin-left: -40px;
+}
+
+#departments ul::before {
+    content: attr(aria-label);
+    font-size: 120%;
+    font-weight: bold;
+    margin-left: -40px;
+    width: 100%;
+}
+
+#departments>ul>li:last-child {
+    margin-bottom: 20px;
+}
+
+
+/* UW Styles */
+
+.right {
+    float: right;
+}
+
+.right>i {
+    margin-top: 30px;
+    font-size: 30px;
+}
+
+body {
+    width: 100%;
+    margin: 0;
+}
+
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px
+}
+
+.container:before,
+.container:after {
+    content: " ";
+    display: table
+}
+
+.container:after {
+    clear: both
+}
+
+.container:before,
+.container:after {
+    content: " ";
+    display: table
+}
+
+.container:after {
+    clear: both
+}
+
+.container:before,
+.container:after {
+    content: " ";
+    display: table
+}
+
+.container:after {
+    clear: both
+}
+
+.container:before,
+.container:after {
+    content: " ";
+    display: table
+}
+
+.container:after {
+    clear: both
+}
+
+@media (min-width: 768px) {
+    .container {
+        width: 750px
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        width: 970px
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px
+    }
+}
+
+.uw-thinstrip {
+    height: 90px;
+    width: 100%;
+    background: var(--uw-purple);
+    color: white;
+    padding-top: 22px;
+    position: relative;
+    z-index: 2;
+    -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3)
+}
+
+.uw-thinstrip .container {
+    position: relative
+}
+
+.uw-thinstrip .uw-patch {
+    display: block;
+    text-indent: -9999px;
+    width: 163px;
+    height: 90px;
+    background: url(https://www.washington.edu/wp-content/themes/uw-2014/assets/svg/uw-sprite.svg) no-repeat 0 0 transparent;
+    position: absolute;
+    top: -22px;
+    left: 0;
+    z-index: 1
+}
+
+.uw-thinstrip .uw-patch:focus,
+.uw-thinstrip .uw-patch:hover {
+    background: url(https://www.washington.edu/wp-content/themes/uw-2014/assets/svg/uw-sprite-focus.svg) no-repeat 0 0 transparent
+}
+
+.uw-thinstrip .uw-patch:before {
+    content: url(https://www.washington.edu/wp-content/themes/uw-2014/assets/svg/uw-sprite-focus.svg);
+    display: none
+}
+
+.uw-thinstrip .uw-wordmark {
+    display: block;
+    position: absolute;
+    top: -15px;
+    left: 150px;
+    font-size: 3em;
+}
+
+@media only screen and (max-width: 767px) {
+    .uw-thinstrip {
+        padding: 0;
+        height: 45px
+    }
+    .uw-thinstrip .container {
+        position: static
+    }
+    .uw-thinstrip .uw-patch {
+        width: 73px;
+        height: 45px;
+        top: 0;
+        left: 0;
+        background-size: 470px;
+        -o-transition: all 0s;
+        -webkit-transition: all 0s;
+        transition: all 0s
+    }
+    .uw-thinstrip .uw-patch:hover,
+    .uw-thinstrip .uw-patch:focus {
+        background-size: 470px
+    }
+    .uw-thinstrip .uw-wordmark {
+        height: 34px;
+        margin: 0;
+        float: none;
+        position: absolute;
+        left: 78px;
+        top: 15px;
+        font-size: larger;
+    }
+    .right>i {
+        margin-top: 15px;
+        font-size: 25px;
+    }
+    .main {
+        display: flex;
+        flex-direction: column;
+    }
+    .departments {
+        column-count: 1;
+        width: 100%;
+    }
+    aside {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    summary>h2 {
+        font-weight: normal;
+    }
+}

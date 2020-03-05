@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluations | UW Course Evaluation Catalog</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://pagination.js.org/dist/2.1.5/pagination.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="uw-thinstrip" role="banner">
+        <div class="container">
+            <a class="uw-patch" href="https://uw.edu" title="University of Washington">University of Washington</a>
+            <h1 class="uw-wordmark">Course Evaluation Catalog</h1>
+            <div class="right">
+                <div class="ui language dropdown right floating icon item" id="languages" data-content="Select Language">
+                    <i class="world icon"></i>
+                    <div class="menu transition hidden">
+                        <div class="header">Select Language</div>
+                        <div class="ui icon search input">
+                            <i class="search icon"></i>
+                            <input type="text" placeholder="Search languages...">
+                        </div>
+                        <div class="scrolling menu">
+                            <div class="item" data-value="en" data-english="English"><span class="description">English</span> English </div>
+                            <div class="item" data-value="es" data-english="Spanish"><span class="description">Español</span> Spanish </div>
+                            <div class="item" data-value="zh" data-english="Chinese"><span class="description">简体中文</span> Chinese </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div id="search">
+            <input type="text" placeholder="Search for: INFO 200" id="searchBar" autofocus>
+            <button type="submit" id="searchButton"><i class="material-icons">search</i> Search</button>
+        </div>
+        <div class="main">
+            <aside>
+                <details open>
+                    <summary>
+                        <h2>Filters</h2>
+                    </summary>
+
+                    <form action="">
+                        <fieldset>
+                            <legend>Campus</legend>
+                            <!--Auto detect campus?-->
+                            <input type="checkbox" name="quarter" id="Seattle" value="Seattle">
+                            <label for="Seattle">Seattle</label>
+                            <br>
+                            <input type="checkbox" name="quarter" id="Bothell" value="Bothell">
+                            <label for="Bothell">Bothell</label>
+                            <br>
+                            <input type="checkbox" name="quarter" id="Tacoma" value="Tacoma">
+                            <label for="Tacoma">Tacoma</label>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Quarter</legend>
+                            <input type="checkbox" name="quarter" id="AU19" value="AU19">
+                            <label for="AU19">AU19</label>
+                            <br>
+                            <input type="checkbox" name="quarter" id="SU19" value="SU19">
+                            <label for="SU19">SU19</label>
+                            <br>
+                            <input type="checkbox" name="quarter" id="SP19" value="SP19">
+                            <label for="SP19">SP19</label>
+                            <br>
+                            <input type="checkbox" name="quarter" id="WI19" value="WI19">
+                            <label for="WI19">WI19</label>
+                        </fieldset>
+                        <fieldset>
+                            <legend>General Education Requirements</legend>
+                            <!--FIXME, add filters-->
+                        </fieldset>
+                    </form>
+                </details>
+            </aside>
+            <main>
+                <details id="departments" open>
+                    <summary>
+                        <h2>Colleges, Schools, and Programs:</h2>
+                    </summary>
+
+                    <ul aria-label="College of Arts and Sciences">
+                        <ul aria-label="American Ethnic Studies">
+                            <li><a href="?dept=afram">African-American Studies (AFRAM)</a></li>
+                            <li>American Ethnic Studies (AES)</li>
+                            <li>Asian-American Studies (AAS)</li>
+                            <li>Chicano Studies (CHSTU)</li>
+                            <li>Swahili (SWA)</li>
+                            <li>Tagalog (TAGLG)</li>
+                        </ul>
+                        <li>American Indian Studies (AIS)</li>
+                        <ul aria-label="Anthropology">
+                            <li>Anthropology (ANTH)</li>
+                            <li>Archaeology (ARCHY)</li>
+                            <li>Biocultural Anthropology (BIO A)</li>
+                        </ul>
+                        <ul aria-label="Applied Mathematics">
+                            <li>Applied Mathematics (AMATH)</li>
+                            <li>Computational Finance & Risk Management (CFRM)</li>
+                        </ul>
+                        <ul aria-label="Art + Art History + Design">
+                            <li>Art (ART)</li>
+                            <li>Art History (ART H)</li>
+                            <li>Design (DESIGN)</li>
+                        </ul>
+                        <ul aria-label="Arts and Sciences Dean's Office">
+                            <li>Arts and Sciences (ARTSCI)</li>
+                            <li>Interdisciplinary Arts (ARTS)</li>
+                            <li>Literature (LIT)</li>
+                        </ul>
+                        <ul aria-label="Asian Languages and Literature">
+                            <li>Asian Languages & Literature (ASIAN)</li>
+                            <li>Bengali (BENG)</li>
+                            <li>Chinese (CHIN)</li>
+                            <li>Hindi (HINDI)</li>
+                            <li>Indian (INDN)</li>
+                            <li>Indonesian (INDO)</li>
+                            <li>Japanese (JAPAN)</li>
+                            <li>Korean (KOREAN)</li>
+                            <li>Sanskrit (SNKRT)</li>
+                            <li>Urdu (URDU)</li>
+                            <li>Vietnamese (VIET)</li>
+                        </ul>
+                        <li>Astrobiology (ASTBIO)</li>
+                        <li>Astronomy (ASTR)</li>
+                        <li>Biology (BIOL)</li>
+                        <li>Center for Statistics & the Social Sci (CS&SS)</li>
+                        <li>Chemistry (CHEM)</li>
+                        <ul aria-label="Cinema and Media Studies">
+                            <li>Cinema and Media Studies (CMS)</li>
+                            <li>Comparative Literature (C LIT)</li>
+                        </ul>
+                        <ul aria-label="Classics">
+                            <li>Classical Archaeology (CL AR)</li>
+                            <li>Classical Linguistics (CL LI)</li>
+                            <li>Classics (CLAS)</li>
+                            <li>Greek (GREEK)</li>
+                            <li>Latin (LATIN)</li>
+                        </ul>
+                        <ul aria-label="Communication">
+                            <li>Communication (COM)</li>
+                            <li>Communication Leadership (COMMLD)</li>
+                        </ul>
+                        <li>Comparative History of Ideas (CHID)</li>
+                        <li>Ctr for Stdies in Demography and Ecology (CSDE)</li>
+                        <li>Dance (DANCE)</li>
+                        <li>Digital Arts and Experimental Media (DXARTS)</li>
+                        <li>Disability Studies (DIS ST)</li>
+                        <li>Drama (DRAMA)</li>
+                        <li>Economics (ECON)</li>
+                        <li>English (ENGL)</li>
+                        <ul aria-label="French and Italian Studies">
+                            <li>French (FRENCH)</li>
+                            <li>Italian (ITAL)</li>
+                        </ul>
+                        <li>Gender, Women, and Sexuality Studies (GWSS)</li>
+                        <ul aria-label="General Studies">
+                            <li>General Studies (GEN ST)</li>
+                            <li>Individualized Studies (INDIV)</li>
+                        </ul>
+                        <li>Geography (GEOG)</li>
+                        <li>Germanics (GERMAN)</li>
+                        <ul aria-label="History">
+                            <li>Ancient & Medieval History (HSTAM)</li>
+                            <li>Comparative and Transregional History (HSTCMP)</li>
+                            <li>History Seminars and Independent Studies (HSTRY)</li>
+                            <li>History of Africa and the Middle East (HSTAFM)</li>
+                            <li>History of Asia (HSTAS)</li>
+                            <li>History of Latin America & the Caribbean (HSTLAC)</li>
+                            <li>History of Modern Europe (HSTEU)</li>
+                            <li>History of North America (USA & Canada) (HSTAA)</li>
+                        </ul>
+                        <li>Humanities (HUM)</li>
+                        <li>Integrated Science (INTSCI)</li>
+                        <li>Intergrated Social Sciences (ISS)</li>
+                        <ul aria-label="Jackson School of International Studies">
+                            <li>Arctic Studies (ARCTIC)</li>
+                            <li>International Studies: Comprtve Religion (RELIG)</li>
+                            <li>Jackson School of Int'l Studies D (JSIS D)</li>
+                            <li>Jewish Studies (JEW ST)</li>
+                            <li>Jsis Area Studies (JSIS A)</li>
+                            <li>Jsis Core and Gateway Courses (JSIS)</li>
+                            <li>Jsis Global and Thematic Courses (JSIS B)</li>
+                            <li>Jsis Language Courses (JSIS E)</li>
+                        </ul>
+                        <li>Law, Societies, and Justice (LSJ)</li>
+                        <ul aria-label="Linguistics">
+                            <li>American Sign Language (ASL)</li>
+                            <li>Linguistics (LING)</li>
+                        </ul>
+                        <li>Mathematics (MATH)</li>
+                        <ul aria-label="Music">
+                            <li>Applied Music (MUSAP)</li>
+                            <li>Music (MUSIC)</li>
+                            <li>Music Education (MUSED)</li>
+                            <li>Music Ensemble (MUSEN)</li>
+                            <li>Music History (MUHST)</li>
+                            <li>Music Performance (MUSICP)</li>
+                        </ul>
+                        <ul aria-label="Near Eastern Languages and Civilization">
+                            <li>Arabic (ARAB)</li>
+                            <li>Aramaic (ARAMIC)</li>
+                            <li>Biblical Hebrew (BIBHEB)</li>
+                            <li>Chagatai (CHGTAI)</li>
+                            <li>Coptic (COPTIC)</li>
+                            <li>Egyptian (EGYPT)</li>
+                            <li>Ge'ez (GEEZ)</li>
+                            <li>Kazakh (KAZAKH)</li>
+                            <li>Kyrgyz (KYRGYZ)</li>
+                            <li>Modern Hebrew (MODHEB)</li>
+                            <li>Near Eastern Languages & Civilization (NEAR E)</li>
+                            <li>Persian (PRSAN)</li>
+                            <li>Turkic (TURKIC)</li>
+                            <li>Turkish (TKISH)</li>
+                            <li>Ugaritic (UGARIT)</li>
+                            <li>Uygur (UYGUR)</li>
+                            <li>Uzbek (UZBEK)</li>
+                        </ul>
+                        <li>Neuroscience (NEUSCI)</li>
+                        <ul aria-label="Philosophy">
+                            <li>Ethics (ETHICS)</li>
+                            <li>History and Philosophy of Science (HPS)</li>
+                            <li>Philosophy (PHIL)</li>
+                        </ul>
+                        <li>Physics (PHYS)</li>
+                        <li>Political Science (POL S)</li>
+                        <ul aria-label="Psychology">
+                            <li>Applied Child and Adolescent Psychology (PSYCAP)</li>
+                            <li>Clinical Psychology (PSYCLN)</li>
+                            <li>Psychology (PSYCH)</li>
+                        </ul>
+                        <ul aria-label="Scandinavian Studies">
+                            <li>Danish (DANISH)</li>
+                            <li>Estonian (ESTO)</li>
+                            <li>Finnish (FINN)</li>
+                            <li>Icelandic (ICEL)</li>
+                            <li>Latvian (LATV)</li>
+                            <li>Lithuanian (LITH)</li>
+                            <li>Norwegian (NORW)</li>
+                            <li>Scandinavian (SCAND)</li>
+                            <li>Swedish (SWED)</li>
+                        </ul>
+                        <ul aria-label="Slavic Languages and Literatures">
+                            <li>Bosnian/Croatian/Montenegrin/Serbian (BCMS)</li>
+                            <li>Bulgarian (BULGR)</li>
+                            <li>Czech (CZECH)</li>
+                            <li>Polish (POLSH)</li>
+                            <li>Romanian (Slavic) (ROMN)</li>
+                            <li>Russian (RUSS)</li>
+                            <li>Slavic Languages & Literatures (SLAVIC)</li>
+                            <li>Slovenian (SLVN)</li>
+                            <li>Ukrainian (UKR)</li>
+                        </ul>
+                        <li>Sociology (SOC)</li>
+                        <ul aria-label="Spanish and Portuguese Studies">
+                            <li>Portuguese (PORT)</li>
+                            <li>Spanish (SPAN)</li>
+                            <li>Spanish Linguistics (SPLING)</li>
+                        </ul>
+                        <li>Speech & Hearing Sciences (SPHSC)</li>
+                        <li>Statistics (STAT)</li>
+                    </ul>
+
+                    <ul aria-label="College of Built Environments">
+                        <li>Architecture (ARCH)</li>
+                        <li>Built Environment (B E)</li>
+                        <li>Construction Management (CM)</li>
+                        <li>Landscape Architecture (L ARCH)</li>
+                        <li>Real Estate (R E)</li>
+                        <ul aria-label="Urban Design and Planning">
+                            <li>Community and Environmental Planning (CEP)</li>
+                            <li>Infrastructure Planning and Management (IPM)</li>
+                            <li>Strategic Planning for Critical Infrastr (SPCI)</li>
+                            <li>Urban Planning (URBDP)</li>
+                        </ul>
+                    </ul>
+
+                    <ul aria-label="Foster School of Business">
+                        <li>Accounting (ACCTG)</li>
+                        <li>Administration (ADMIN)</li>
+                        <li>Bus Admin Research Methods (BA RM)</li>
+                        <li>Business Administration (B A)</li>
+                        <li>Business Analytics (BUS AN)</li>
+                        <li>Business Communication (B CMU)</li>
+                        <li>Business Economics (B ECON)</li>
+                        <li>Entrepreneurship and Innovation (ENTRE)</li>
+                        <li>Exec Masters Business Admin Group (EMBA)</li>
+                        <li>Finance (FIN)</li>
+                        <li>Information Systems (I S)</li>
+                        <li>International Business (I BUS)</li>
+                        <li>M.s. Information Systems (MSIS)</li>
+                        <li>Management (MGMT)</li>
+                        <li>Marketing (MKTG)</li>
+                        <li>Operations Management (OPMGT)</li>
+                        <li>Quantitative Methods (QMETH)</li>
+                        <li>Supply Chain Management (SCM)</li>
+                        <li>Technology Mgmt Masters Bus Admin Group (TMMBA)</li>
+                    </ul>
+
+                    <ul aria-label="School of Dentistry">
+                        <ul aria-label="Dentistry">
+                            <li>Dental Clerkship (DENTCL)</li>
+                            <li>Dental Elective (DENTEL)</li>
+                            <li>Dental Foundations (DENTFN)</li>
+                            <li>Dental General Practice (DENTGP)</li>
+                            <li>Dental Pre-Clinical (DENTPC)</li>
+                            <li>Dental Selective (DENTSL)</li>
+                            <li>Dentistry (DENT)</li>
+                        </ul>
+                        <li>Endodontics (ENDO)</li>
+                        <ul aria-label="Oral Health Sciences">
+                            <li>Dental Hygiene (D HYG)</li>
+                            <li>Dental Public Health Sciences (DPHS)</li>
+                            <li>Oral Biology (ORALB)</li>
+                            <li>Oral Health Sciences (OHS)</li>
+                        </ul>
+                        <li>Oral Medicine (ORALM)</li>
+                        <li>Oral Surgery (O S)</li>
+                        <li>Orthodontics (ORTHO)</li>
+                        <li>Pediatric Dentistry (PEDO)</li>
+                        <li>Periodontics (PERIO)</li>
+                        <ul aria-label="Restorative Dentistry">
+                            <li>Prosthodontics (PROS)</li>
+                            <li>Restorative Dentistry (RES D)</li>
+                        </ul>
+                    </ul>
+
+                    <ul aria-label="College of Education">
+                        <li>Curriculum & Instruction (EDC&I)</li>
+                        <li>Early Care and Education (ECE)</li>
+                        <li>Early Childhood and Family Studies (ECFS)</li>
+                        <li>Education (EDUC)</li>
+                        <li>Education (Teacher Education Program) (EDTEP)</li>
+                        <li>Educational Leadership & Policy Studies (EDLPS)</li>
+                        <li>Educational Psychology (EDPSY)</li>
+                        <li>Special Education (EDSPE)</li>
+                    </ul>
+
+                    <ul aria-label="College of Engineering">
+                        <ul aria-label="Aeronautics and Astronautics">
+                            <li>Aeronautics & Astronautics (A A)</li>
+                            <li>Aerospace Engineering (A E)</li>
+                        </ul>
+                        <ul aria-label="Bioengineering">
+                            <li>Bioengineering (BIOEN)</li>
+                            <li>Pharmaceutical Bioengineering (PHARBE)</li>
+                        </ul>
+                        <ul aria-label="Chemical Engineering">
+                            <li>Chemical Engineering (CHEM E)</li>
+                            <li>Nanoscience and Molecular Engineering (NME)</li>
+                        </ul>
+                        <ul aria-label="Civil and Environmental Engineering">
+                            <li>Civil & Environmental Engineering (CEE)</li>
+                            <li>Constr,Energy,and Sustainable Infrstrctr (CESI)</li>
+                            <li>Environmental Engineering & Science (CEWA)</li>
+                            <li>Structural and Geotechnical Engineering (CESG)</li>
+                            <li>Supply Chain Transportation & Logistics (SCTL)</li>
+                            <li>Transportation Engineering (CET)</li>
+                        </ul>
+                        <ul aria-label="Computer Science and Engineering">
+                            <li>Comp Sci & Engr Accelerated Masters Prg (CSE M)</li>
+                            <li>Comp Sci & Engr Professional Masters Prg (CSE P)</li>
+                            <li>Comp Sci and Engineering - Data Science (CSE D)</li>
+                            <li>Computer Science & Engineering (CSE)</li>
+                        </ul>
+                        <ul aria-label="Electrical and Computer Engineering">
+                            <li>Electrical Engineering (E E)</li>
+                            <li>Electrical Engineering for Practicing En (EE P)</li>
+                        </ul>
+                        <li>Engineering (ENGR)</li>
+                        <li>Human Centered Design and Engineering (HCDE)</li>
+                        <li>Industrial Engineering (IND E)</li>
+                        <li>Materials Science & Engineering (MSE)</li>
+                        <li>Mechanical Engineering (M E)</li>
+                    </ul>
+
+                    <ul aria-label="College of the Environment">
+                        <li>Atmospheric Sciences (ATM S)</li>
+                        <ul aria-label="Center for Quantitative Science">
+                            <li>Quantitative Ecology & Resource Mgmt (QERM)</li>
+                            <li>Quantitative Science (Fisheries & for R) (Q SCI)</li>
+                        </ul>
+                        <li>Earth and Space Sciences (ESS)</li>
+                        <ul aria-label="College of the Environment Special Programs">
+                            <li>College of the Environment (C ENV)</li>
+                            <li>Quaternary Sciences (QUAT)</li>
+                        </ul>
+                        <ul aria-label="School of Environmental and Forest Science">
+                            <li>Bioresource Science & Engineering (BSE)</li>
+                            <li>Environmental Sci & Resource Management (ESRM)</li>
+                            <li>School of Environment and Forest Rsrcs (SEFS)</li>
+                        </ul>
+                        <li>Fisheries (FISH)</li>
+                        <li>Friday Harbor Labs (FHL)</li>
+                        <li>School Marine and Environmental Affairs (SMEA)</li>
+                        <li>Marine Biology (MARBIO)</li>
+                        <li>Oceanography (OCEAN)</li>
+                        <li>Program On the Environment (ENVIR)</li>
+                        <li>Science Teaching (SCI T)</li>
+                    </ul>
+
+                    <ul aria-label="Honors (UAA)">
+                        <li>Honors (HONORS)</li>
+                    </ul>
+
+                    <ul aria-label="The Information School">
+                        <li>Informatics (INFO)</li>
+                        <li>Information Management & Technology (IMT)</li>
+                        <li>Information Science (INSC)</li>
+                        <li>Information Technology Applications (ITA)</li>
+                        <li>Library & Information Science (LIS)</li>
+                    </ul>
+
+                    <ul aria-label="Interdisciplinary Graduate Programs">
+                        <li>Biological Physics, Structure, & Design (BPSD)</li>
+                        <li>Data Science (DATA)</li>
+                        <li>Graduate School (GRDSCH)</li>
+                        <li>Human Development and Disability (HDD)</li>
+                        <li>Human-Computer Interaction Design (HCID)</li>
+                        <li>Individual PhD (IPHD)</li>
+                        <li>Molecular and Cellular Biology (MCB)</li>
+                        <li>Molecular Engineering (MOLENG)</li>
+                        <li>Museology (MUSEUM)</li>
+                        <li>Near & Middle Eastern Studies (N&MES)</li>
+                        <ul aria-label="Neuroscience">
+                            <li>Neurobiology & Behavior (NEUBEH)</li>
+                            <li>Neuroscience (NEURO)</li>
+                        </ul>
+                        <li>Public Scholarship (PUBSCH)</li>
+                        <li>Science, Technology, and Society Studies (STSS)</li>
+                        <li>Technology Innovation (TECHIN)</li>
+                    </ul>
+
+                    <ul aria-label="Interdisciplinary Undergraduate Programs">
+                        <li>University Academy (ACADEM)</li>
+                    </ul>
+
+                    <ul aria-label="Interschool or Intercollege Programs">
+                        <ul aria-label="Bioengineering">
+                            <li>Bioengineering (BIOEN)</li>
+                            <li>Pharmaceutical Bioengineering (PHARBE)</li>
+                        </ul>
+                        <li>Global Health (G H)</li>
+                        <li>University Conjoint (UCONJ)</li>
+                    </ul>
+
+                    <ul aria-label="School of Law">
+                        <li>Law (LAW)</li>
+                        <li>Law (Health) (LAW H)</li>
+                        <li>Law (Intellectual Property) (LAW P)</li>
+                        <li>Law (Taxation) (LAW T)</li>
+                        <li>Law A (LAW A)</li>
+                        <li>Law B (LAW B)</li>
+                        <li>Law C (LAW C)</li>
+                        <li>Law E (LAW E)</li>
+                    </ul>
+
+                    <ul aria-label="Leadership (UAA)">
+                        <li>Leadership (LEAD)</li>
+                    </ul>
+
+                    <ul aria-label="School of Medicine">
+                        <li>Anesthesiology (ANEST)</li>
+                        <li>Biochemistry (BIOC)</li>
+                        <ul aria-label="Bioengineering">
+                            <li>Bioengineering (BIOEN)</li>
+                            <li>Pharmaceutical Bioengineering (PHARBE)</li>
+                        </ul>
+                        <li>Bioethics and Humanities (B H)</li>
+                        <li>Biological Structure (B STR)</li>
+                        <li>Biomedical Informatics and Med Education (BIME)</li>
+                        <li>Comparative Medicine (C MED)</li>
+                        <li>Emergency Medicine (MED EM)</li>
+                        <ul aria-label="Family Medicine">
+                            <li>Family Medicine (FAMED)</li>
+                            <li>Medex (MEDEX)</li>
+                        </ul>
+                        <li>Genome Sciences (GENOME)</li>
+                        <li>Global Health (G H)</li>
+                        <li>Health Metrics Sciences (HMS)</li>
+                        <ul aria-label="Human Biology">
+                            <li>Conjoint (Medicine) (CONJ)</li>
+                            <li>Human Biology (HUBIO)</li>
+                            <li>Medical Science (MEDSCI)</li>
+                        </ul>
+                        <li>Immunology (IMMUN)</li>
+                        <li>Laboratory Medicine (LAB M)</li>
+                        <ul aria-label="School of Medicine">
+                            <li>Elective Clerkships (MEDECK)</li>
+                            <li>Medicine (MED)</li>
+                            <li>Required Clerkships (MEDRCK)</li>
+                        </ul>
+                        <li>Microbiology (MICROM)</li>
+                        <li>Neurological Surgery (NEUR S)</li>
+                        <li>Neurology (NEURL)</li>
+                        <li>Obstetrics & Gynecology (OB GYN)</li>
+                        <li>Ophthalmology (OPHTH)</li>
+                        <li>Orthopedics (ORTHP)</li>
+                        <li>Otolaryngology,Head & Neck Surgery (OTOHN)</li>
+                        <ul aria-label="Pathology">
+                            <li>Molecular Medicine (MOLMED)</li>
+                            <li>Pathology (PATH)</li>
+                        </ul>
+                        <li>Pediatrics (PEDS)</li>
+                        <li>Pharmacology (PHCOL)</li>
+                        <li>Physiology & Biophysics (P BIO)</li>
+                        <li>Psychiatry & Behavioral Sciences (PBSCI)</li>
+                        <li>Radiation Oncology (R ONC)</li>
+                        <li>Radiology (RADGY)</li>
+                        <ul aria-label="Rehabilitation Medicine">
+                            <li>Rehab Med - Prosthetics & Orthotics (RHB PO)</li>
+                            <li>Rehabilitation Medicine (REHAB)</li>
+                        </ul>
+                        <li>Surgery (SURG)</li>
+                        <li>Urology (UROL)</li>
+                    </ul>
+
+                    <ul aria-label="School of Nursing">
+                        <li>Infant & Early Childhood Mental Health (IECMH)</li>
+                        <li>Nursing (NSG)</li>
+                        <li>Nursing (NURS)</li>
+                        <li>Nursing Clinical (NCLIN)</li>
+                        <li>Nursing Methods (NMETH)</li>
+                    </ul>
+
+                    <ul aria-label="School of Pharmacy">
+                        <li>Medicinal Chemistry (MEDCH)</li>
+                        <li>Pharmaceutics (PCEUT)</li>
+                        <ul aria-label="School of Pharmacy">
+                            <li>Pharmacy (PHARM)</li>
+                            <li>Pharmacy (PHRMCY)</li>
+                            <li>Pharmacy Practice (PHARMP)</li>
+                            <li>Pharmacy Practice (PHRMPR)</li>
+                            <li>Pharmacy Regulatory Affairs (PHRMRA)</li>
+                        </ul>
+                    </ul>
+
+                    <ul aria-label="School of Public Health">
+                        <li>Biostatistics (BIOST)</li>
+                        <li>Environmental Health (ENV H)</li>
+                        <li>Epidemiology (EPI)</li>
+                        <li>Global Health (G H)</li>
+                        <ul aria-label="Health Services">
+                            <li>Health Informatics & Hlth Informtn Mgmt (HIHIM)</li>
+                            <li>Health Services (HSERV)</li>
+                            <li>Health Services Management (HSMGMT)</li>
+                        </ul>
+                        <li>Pathobiology (PABIO)</li>
+                        <ul aria-label="School of Public Health">
+                            <li>Nutritional Science (NUTR)</li>
+                            <li>Public Health Genetics (PHG)</li>
+                            <li>Public Health Interdisciplinary (PHI)</li>
+                            <li>School of Public Health (SPH)</li>
+                        </ul>
+                    </ul>
+
+                    <ul aria-label="Provost">
+                        <li>Aerospace Studies (Air Force ROTC) (A S)</li>
+                        <li>Military Science (M SCI)</li>
+                        <li>Naval Science (N SCI)</li>
+                    </ul>
+
+                    <ul aria-label="Evans School of Public Policy and Governance">
+                        <li>Public Policy and Governance</li>
+                        <li>Public Affairs Executive MPA (PA EX)</li>
+                        <li>Public Policy (PUBPOL)</li>
+                        <li>Public Policy and Management (PPM)</li>
+                    </ul>
+
+                    <ul aria-label="School of Social Work">
+                        <li>Social Work</li>
+                        <li>Social Welfare (SOC WL)</li>
+                        <li>Social Welfare (Basw) (SOC WF)</li>
+                        <li>Social Work (Msw) (SOC W)</li>
+                    </ul>
+                </details>
+                <div id="searchResult"></div>
+                <div id="pagination"></div>
+            </main>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.4.6/fuse.min.js"></script>
+    <script src="./js/jquery.ba-throttle-debounce.min.js"></script>
+    <script src="https://pagination.js.org/dist/2.1.5/pagination.min.js"></script>
+    <script>
+        var evaluations = []
+        var courses = []
+        var fuse;
+        var options = {
+            shouldSort: true,
+            tokenize: true,
+            threshold: 0.5,
+            location: 0,
+            distance: 5,
+            maxPatternLength: 30,
+            minMatchCharLength: 3,
+            keys: ["department", "course", "facultyName", "name", "section"]
+        };
+        $(function() {
+            $.getJSON("./courses.json", function(json) {
+                courses = json;
+                $.getJSON("./cec.json", function(json) {
+                    $.each(json, function(idx, evaluation) {
+                        var name = null;
+                        const department = evaluation.department;
+                        const courseNumber = evaluation.course;
+                        if (department in courses) {
+                            allDepartmentalCourses = courses[department]
+                            if (courseNumber in allDepartmentalCourses) {
+                                name = allDepartmentalCourses[courseNumber]['name']
+                            }
+                        }
+                        evaluation['name'] = name
+                    });
+                    evaluations = json;
+                    fuse = new Fuse(evaluations, options);
+                });
+            });
+        });
+
+        // FIXME: Load translations
+        $('#languages').dropdown({
+            fullTextSearch: true,
+            onChange: (value) => {
+                localStorage.setItem('language', value)
+                console.log(value)
+            }
+        }).dropdown(
+            'set selected', localStorage.getItem('language')
+        );
+        $('#searchBar').keyup($.throttle(250, populateResults));
+
+        function populateResults() {
+            var query = $("#searchBar").val();
+            if (query) {
+                var result = fuse.search(query);
+                $('#pagination').pagination({
+                    dataSource: result,
+                    showGoInput: true,
+                    formatGoInput: 'jump to page <%= input %>',
+                    callback: function(evaluations, pagination) {
+                        var html = showEvaluations(evaluations);
+                        $('#searchResult').html(html);
+                    }
+                })
+                $('#pagination').show()
+                $('#searchResult').show()
+                $("#departments").slideUp()
+            } else {
+                $("#departments").slideDown()
+                $('#searchResult').hide()
+                $('#pagination').hide()
+            }
+        }
+
+        function groupBy(list, keyGetter) {
+            const map = new Map();
+            list.forEach((item) => {
+                const key = keyGetter(item);
+                const collection = map.get(key);
+                if (!collection) {
+                    map.set(key, [item]);
+                } else {
+                    collection.push(item);
+                }
+            });
+            return map;
+        }
+
+        function showEvaluations(evaluations) {
+            const categorized = groupBy(evaluations, evaluation => `${evaluation.department} ${evaluation.course}`)
+            var html = '<ul>';
+            for (const [fullCourseName, evaluations] of categorized.entries()) {
+                var innerHTML = ""
+                var name;
+                $.each(evaluations, function(idx, evaluation) {
+                    name = evaluation.name;
+                    innerHTML += showEvaluation(evaluation);
+                });
+                if (name) {} else name = "<emphasis>(No Longer Offered)</emphasis>";
+                html += `
+                    <h3>
+                        ${fullCourseName} ${name}
+                        <span class="right">View in 
+                            <a href="https://myplan.uw.edu/course/#/courses/${fullCourseName}" target="_blank">
+                            MyPlan
+                            </a>
+                        </span>
+                    </h3>
+                    
+                    <ul>
+                        ${innerHTML}
+                    </ul>
+                `
+            }
+            return html + '</ul>';
+        }
+
+        function showEvaluation(evaluation) {
+            department = evaluation.department;
+            number = evaluation.course;
+            return `
+                <li class="evaluation-entry">
+                    <a href="https://www.washington.edu/cec/${evaluation.url}">
+                        <span>${evaluation.quarter}</span>
+                        <span>Section ${evaluation.section}</span>
+                        by
+                        <span>${evaluation.facultyName} (${evaluation.facultyType})</span>
+                    </a>
+                </li>
+            `
+        }
+    </script>
+</body>
+
+</html>
