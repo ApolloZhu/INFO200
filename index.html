@@ -8,27 +8,27 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://pagination.js.org/dist/2.1.5/pagination.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
     <header class="uw-thinstrip" role="banner">
         <div class="container">
-            <a class="uw-patch" href="https://uw.edu" title="University of Washington">University of Washington</a>
-            <h1 class="uw-wordmark">Course Evaluation Catalog</h1>
+            <a class="uw-patch" href="https://uw.edu" data-localize="uw" title="University of Washington">University of Washington</a>
+            <h1 class="uw-wordmark" data-localize="cec">Course Evaluation Catalog</h1>
             <div class="right">
                 <div class="ui language dropdown right floating icon item" id="languages" data-content="Select Language">
                     <i class="world icon"></i>
                     <div class="menu transition hidden">
-                        <div class="header">Select Language</div>
+                        <div class="header" data-localize="select-language">Select Language</div>
                         <div class="ui icon search input">
                             <i class="search icon"></i>
-                            <input type="text" placeholder="Search languages...">
+                            <input type="text" data-localize="search-languages" placeholder="Search languages...">
                         </div>
                         <div class="scrolling menu">
                             <div class="item" data-value="en" data-english="English"><span class="description">English</span> English </div>
                             <div class="item" data-value="es" data-english="Spanish"><span class="description">Español</span> Spanish </div>
-                            <div class="item" data-value="zh" data-english="Chinese"><span class="description">简体中文</span> Chinese </div>
+                            <div class="item" data-value="cn" data-english="Chinese"><span class="description">简体中文</span> Chinese </div>
                         </div>
                     </div>
                 </div>
@@ -37,19 +37,22 @@
     </header>
     <div class="container">
         <div id="search">
-            <input type="text" placeholder="Search for: INFO 200" id="searchBar" autofocus>
-            <button type="submit" id="searchButton"><i class="material-icons">search</i> Search</button>
+            <input type="text" data-localize="search-placeholder" placeholder="Search for: INFO 200" id="searchBar" autofocus>
+            <button type="submit" id="searchButton">
+                <i class="material-icons">search</i>
+                <span data-localize="search">Search</span>
+            </button>
         </div>
         <div class="main">
             <aside>
                 <details open>
                     <summary>
-                        <h2>Filters</h2>
+                        <h2 data-localize="filters">Filters</h2>
                     </summary>
 
                     <form action="">
                         <fieldset>
-                            <legend>Campus</legend>
+                            <legend data-localize="campus">Campus</legend>
                             <!--Auto detect campus?-->
                             <input type="checkbox" name="quarter" id="Seattle" value="Seattle">
                             <label for="Seattle">Seattle</label>
@@ -61,7 +64,7 @@
                             <label for="Tacoma">Tacoma</label>
                         </fieldset>
                         <fieldset>
-                            <legend>Quarter</legend>
+                            <legend data-localize="quarter">Quarter</legend>
                             <input type="checkbox" name="quarter" id="AU19" value="AU19">
                             <label for="AU19">AU19</label>
                             <br>
@@ -75,7 +78,7 @@
                             <label for="WI19">WI19</label>
                         </fieldset>
                         <fieldset>
-                            <legend>General Education Requirements</legend>
+                            <legend data-localize="gen-ed">General Education Requirements</legend>
                             <!--FIXME, add filters-->
                         </fieldset>
                     </form>
@@ -84,11 +87,13 @@
             <main>
                 <details id="departments" open>
                     <summary>
-                        <h2>Colleges, Schools, and Programs:</h2>
+                        <h2 data-localize="departments">Colleges, Schools, and Programs</h2>
                     </summary>
 
-                    <ul aria-label="College of Arts and Sciences">
-                        <ul aria-label="American Ethnic Studies">
+                    <h3>College of Arts and Sciences</h3>
+                    <ul>
+                        <li class="category">American Ethnic Studies</li>
+                        <ul>
                             <li><a href="?dept=afram">African-American Studies (AFRAM)</a></li>
                             <li>American Ethnic Studies (AES)</li>
                             <li>Asian-American Studies (AAS)</li>
@@ -97,26 +102,31 @@
                             <li>Tagalog (TAGLG)</li>
                         </ul>
                         <li>American Indian Studies (AIS)</li>
-                        <ul aria-label="Anthropology">
+                        <li class="category">Anthropology</li>
+                        <ul>
                             <li>Anthropology (ANTH)</li>
                             <li>Archaeology (ARCHY)</li>
                             <li>Biocultural Anthropology (BIO A)</li>
                         </ul>
-                        <ul aria-label="Applied Mathematics">
+                        <li class="category">Applied Mathematics</li>
+                        <ul>
                             <li>Applied Mathematics (AMATH)</li>
                             <li>Computational Finance & Risk Management (CFRM)</li>
                         </ul>
-                        <ul aria-label="Art + Art History + Design">
+                        <li class="category">Art + Art History + Design</li>
+                        <ul>
                             <li>Art (ART)</li>
                             <li>Art History (ART H)</li>
                             <li>Design (DESIGN)</li>
                         </ul>
-                        <ul aria-label="Arts and Sciences Dean's Office">
+                        <li class="category">Arts and Sciences Dean's Office</li>
+                        <ul>
                             <li>Arts and Sciences (ARTSCI)</li>
                             <li>Interdisciplinary Arts (ARTS)</li>
                             <li>Literature (LIT)</li>
                         </ul>
-                        <ul aria-label="Asian Languages and Literature">
+                        <li class="category">Asian Languages and Literature</li>
+                        <ul>
                             <li>Asian Languages & Literature (ASIAN)</li>
                             <li>Bengali (BENG)</li>
                             <li>Chinese (CHIN)</li>
@@ -134,18 +144,21 @@
                         <li>Biology (BIOL)</li>
                         <li>Center for Statistics & the Social Sci (CS&SS)</li>
                         <li>Chemistry (CHEM)</li>
-                        <ul aria-label="Cinema and Media Studies">
+                        <li class="category">Cinema and Media Studies</li>
+                        <ul>
                             <li>Cinema and Media Studies (CMS)</li>
                             <li>Comparative Literature (C LIT)</li>
                         </ul>
-                        <ul aria-label="Classics">
+                        <li class="category">Classics</li>
+                        <ul>
                             <li>Classical Archaeology (CL AR)</li>
                             <li>Classical Linguistics (CL LI)</li>
                             <li>Classics (CLAS)</li>
                             <li>Greek (GREEK)</li>
                             <li>Latin (LATIN)</li>
                         </ul>
-                        <ul aria-label="Communication">
+                        <li class="category">Communication</li>
+                        <ul>
                             <li>Communication (COM)</li>
                             <li>Communication Leadership (COMMLD)</li>
                         </ul>
@@ -157,18 +170,21 @@
                         <li>Drama (DRAMA)</li>
                         <li>Economics (ECON)</li>
                         <li>English (ENGL)</li>
-                        <ul aria-label="French and Italian Studies">
+                        <li class="category">French and Italian Studies</li>
+                        <ul>
                             <li>French (FRENCH)</li>
                             <li>Italian (ITAL)</li>
                         </ul>
                         <li>Gender, Women, and Sexuality Studies (GWSS)</li>
-                        <ul aria-label="General Studies">
+                        <li class="category">General Studies</li>
+                        <ul>
                             <li>General Studies (GEN ST)</li>
                             <li>Individualized Studies (INDIV)</li>
                         </ul>
                         <li>Geography (GEOG)</li>
                         <li>Germanics (GERMAN)</li>
-                        <ul aria-label="History">
+                        <li class="category">History</li>
+                        <ul>
                             <li>Ancient & Medieval History (HSTAM)</li>
                             <li>Comparative and Transregional History (HSTCMP)</li>
                             <li>History Seminars and Independent Studies (HSTRY)</li>
@@ -181,7 +197,8 @@
                         <li>Humanities (HUM)</li>
                         <li>Integrated Science (INTSCI)</li>
                         <li>Intergrated Social Sciences (ISS)</li>
-                        <ul aria-label="Jackson School of International Studies">
+                        <li class="category">Jackson School of International Studies</li>
+                        <ul>
                             <li>Arctic Studies (ARCTIC)</li>
                             <li>International Studies: Comprtve Religion (RELIG)</li>
                             <li>Jackson School of Int'l Studies D (JSIS D)</li>
@@ -192,12 +209,14 @@
                             <li>Jsis Language Courses (JSIS E)</li>
                         </ul>
                         <li>Law, Societies, and Justice (LSJ)</li>
-                        <ul aria-label="Linguistics">
+                        <li class="category">Linguistics</li>
+                        <ul>
                             <li>American Sign Language (ASL)</li>
                             <li>Linguistics (LING)</li>
                         </ul>
                         <li>Mathematics (MATH)</li>
-                        <ul aria-label="Music">
+                        <li class="category">Music</li>
+                        <ul>
                             <li>Applied Music (MUSAP)</li>
                             <li>Music (MUSIC)</li>
                             <li>Music Education (MUSED)</li>
@@ -205,7 +224,8 @@
                             <li>Music History (MUHST)</li>
                             <li>Music Performance (MUSICP)</li>
                         </ul>
-                        <ul aria-label="Near Eastern Languages and Civilization">
+                        <li class="category">Near Eastern Languages and Civilization</li>
+                        <ul>
                             <li>Arabic (ARAB)</li>
                             <li>Aramaic (ARAMIC)</li>
                             <li>Biblical Hebrew (BIBHEB)</li>
@@ -225,19 +245,22 @@
                             <li>Uzbek (UZBEK)</li>
                         </ul>
                         <li>Neuroscience (NEUSCI)</li>
-                        <ul aria-label="Philosophy">
+                        <li class="category">Philosophy</li>
+                        <ul>
                             <li>Ethics (ETHICS)</li>
                             <li>History and Philosophy of Science (HPS)</li>
                             <li>Philosophy (PHIL)</li>
                         </ul>
                         <li>Physics (PHYS)</li>
                         <li>Political Science (POL S)</li>
-                        <ul aria-label="Psychology">
+                        <li class="category">Psychology</li>
+                        <ul>
                             <li>Applied Child and Adolescent Psychology (PSYCAP)</li>
                             <li>Clinical Psychology (PSYCLN)</li>
                             <li>Psychology (PSYCH)</li>
                         </ul>
-                        <ul aria-label="Scandinavian Studies">
+                        <li class="category">Scandinavian Studies</li>
+                        <ul>
                             <li>Danish (DANISH)</li>
                             <li>Estonian (ESTO)</li>
                             <li>Finnish (FINN)</li>
@@ -248,7 +271,8 @@
                             <li>Scandinavian (SCAND)</li>
                             <li>Swedish (SWED)</li>
                         </ul>
-                        <ul aria-label="Slavic Languages and Literatures">
+                        <li class="category">Slavic Languages and Literatures</li>
+                        <ul>
                             <li>Bosnian/Croatian/Montenegrin/Serbian (BCMS)</li>
                             <li>Bulgarian (BULGR)</li>
                             <li>Czech (CZECH)</li>
@@ -260,7 +284,8 @@
                             <li>Ukrainian (UKR)</li>
                         </ul>
                         <li>Sociology (SOC)</li>
-                        <ul aria-label="Spanish and Portuguese Studies">
+                        <li class="category">Spanish and Portuguese Studies</li>
+                        <ul>
                             <li>Portuguese (PORT)</li>
                             <li>Spanish (SPAN)</li>
                             <li>Spanish Linguistics (SPLING)</li>
@@ -269,13 +294,15 @@
                         <li>Statistics (STAT)</li>
                     </ul>
 
-                    <ul aria-label="College of Built Environments">
+                    <h3>College of Built Environments</h3>
+                    <ul>
                         <li>Architecture (ARCH)</li>
                         <li>Built Environment (B E)</li>
                         <li>Construction Management (CM)</li>
                         <li>Landscape Architecture (L ARCH)</li>
                         <li>Real Estate (R E)</li>
-                        <ul aria-label="Urban Design and Planning">
+                        <li class="category">Urban Design and Planning</li>
+                        <ul>
                             <li>Community and Environmental Planning (CEP)</li>
                             <li>Infrastructure Planning and Management (IPM)</li>
                             <li>Strategic Planning for Critical Infrastr (SPCI)</li>
@@ -283,7 +310,8 @@
                         </ul>
                     </ul>
 
-                    <ul aria-label="Foster School of Business">
+                    <h3>Foster School of Business</h3>
+                    <ul>
                         <li>Accounting (ACCTG)</li>
                         <li>Administration (ADMIN)</li>
                         <li>Bus Admin Research Methods (BA RM)</li>
@@ -305,8 +333,10 @@
                         <li>Technology Mgmt Masters Bus Admin Group (TMMBA)</li>
                     </ul>
 
-                    <ul aria-label="School of Dentistry">
-                        <ul aria-label="Dentistry">
+                    <h3>School of Dentistry</h3>
+                    <ul>
+                        <li class="category">Dentistry</li>
+                        <ul>
                             <li>Dental Clerkship (DENTCL)</li>
                             <li>Dental Elective (DENTEL)</li>
                             <li>Dental Foundations (DENTFN)</li>
@@ -316,7 +346,8 @@
                             <li>Dentistry (DENT)</li>
                         </ul>
                         <li>Endodontics (ENDO)</li>
-                        <ul aria-label="Oral Health Sciences">
+                        <li class="category">Oral Health Sciences</li>
+                        <ul>
                             <li>Dental Hygiene (D HYG)</li>
                             <li>Dental Public Health Sciences (DPHS)</li>
                             <li>Oral Biology (ORALB)</li>
@@ -327,13 +358,15 @@
                         <li>Orthodontics (ORTHO)</li>
                         <li>Pediatric Dentistry (PEDO)</li>
                         <li>Periodontics (PERIO)</li>
-                        <ul aria-label="Restorative Dentistry">
+                        <li class="category">Restorative Dentistry</li>
+                        <ul>
                             <li>Prosthodontics (PROS)</li>
                             <li>Restorative Dentistry (RES D)</li>
                         </ul>
                     </ul>
 
-                    <ul aria-label="College of Education">
+                    <h3>College of Education</h3>
+                    <ul>
                         <li>Curriculum & Instruction (EDC&I)</li>
                         <li>Early Care and Education (ECE)</li>
                         <li>Early Childhood and Family Studies (ECFS)</li>
@@ -344,20 +377,25 @@
                         <li>Special Education (EDSPE)</li>
                     </ul>
 
-                    <ul aria-label="College of Engineering">
-                        <ul aria-label="Aeronautics and Astronautics">
+                    <h3>College of Engineering</h3>
+                    <ul>
+                        <li class="category">Aeronautics and Astronautics</li>
+                        <ul>
                             <li>Aeronautics & Astronautics (A A)</li>
                             <li>Aerospace Engineering (A E)</li>
                         </ul>
-                        <ul aria-label="Bioengineering">
+                        <li class="category">Bioengineering</li>
+                        <ul>
                             <li>Bioengineering (BIOEN)</li>
                             <li>Pharmaceutical Bioengineering (PHARBE)</li>
                         </ul>
-                        <ul aria-label="Chemical Engineering">
+                        <li class="category">Chemical Engineering</li>
+                        <ul>
                             <li>Chemical Engineering (CHEM E)</li>
                             <li>Nanoscience and Molecular Engineering (NME)</li>
                         </ul>
-                        <ul aria-label="Civil and Environmental Engineering">
+                        <li class="category">Civil and Environmental Engineering</li>
+                        <ul>
                             <li>Civil & Environmental Engineering (CEE)</li>
                             <li>Constr,Energy,and Sustainable Infrstrctr (CESI)</li>
                             <li>Environmental Engineering & Science (CEWA)</li>
@@ -365,13 +403,15 @@
                             <li>Supply Chain Transportation & Logistics (SCTL)</li>
                             <li>Transportation Engineering (CET)</li>
                         </ul>
-                        <ul aria-label="Computer Science and Engineering">
+                        <li class="category">Computer Science and Engineering</li>
+                        <ul>
                             <li>Comp Sci & Engr Accelerated Masters Prg (CSE M)</li>
                             <li>Comp Sci & Engr Professional Masters Prg (CSE P)</li>
                             <li>Comp Sci and Engineering - Data Science (CSE D)</li>
                             <li>Computer Science & Engineering (CSE)</li>
                         </ul>
-                        <ul aria-label="Electrical and Computer Engineering">
+                        <li class="category">Electrical and Computer Engineering</li>
+                        <ul>
                             <li>Electrical Engineering (E E)</li>
                             <li>Electrical Engineering for Practicing En (EE P)</li>
                         </ul>
@@ -382,18 +422,22 @@
                         <li>Mechanical Engineering (M E)</li>
                     </ul>
 
-                    <ul aria-label="College of the Environment">
+                    <h3>College of the Environment</h3>
+                    <ul>
                         <li>Atmospheric Sciences (ATM S)</li>
-                        <ul aria-label="Center for Quantitative Science">
+                        <li class="category">Center for Quantitative Science</li>
+                        <ul>
                             <li>Quantitative Ecology & Resource Mgmt (QERM)</li>
                             <li>Quantitative Science (Fisheries & for R) (Q SCI)</li>
                         </ul>
                         <li>Earth and Space Sciences (ESS)</li>
-                        <ul aria-label="College of the Environment Special Programs">
+                        <li class="category">College of the Environment Special Programs</li>
+                        <ul>
                             <li>College of the Environment (C ENV)</li>
                             <li>Quaternary Sciences (QUAT)</li>
                         </ul>
-                        <ul aria-label="School of Environmental and Forest Science">
+                        <li class="category">School of Environmental and Forest Science</li>
+                        <ul>
                             <li>Bioresource Science & Engineering (BSE)</li>
                             <li>Environmental Sci & Resource Management (ESRM)</li>
                             <li>School of Environment and Forest Rsrcs (SEFS)</li>
@@ -407,11 +451,13 @@
                         <li>Science Teaching (SCI T)</li>
                     </ul>
 
-                    <ul aria-label="Honors (UAA)">
+                    <h3>Honors (UAA)</h3>
+                    <ul>
                         <li>Honors (HONORS)</li>
                     </ul>
 
-                    <ul aria-label="The Information School">
+                    <h3>The Information School</h3>
+                    <ul>
                         <li>Informatics (INFO)</li>
                         <li>Information Management & Technology (IMT)</li>
                         <li>Information Science (INSC)</li>
@@ -419,7 +465,8 @@
                         <li>Library & Information Science (LIS)</li>
                     </ul>
 
-                    <ul aria-label="Interdisciplinary Graduate Programs">
+                    <h3>Interdisciplinary Graduate Programs</h3>
+                    <ul>
                         <li>Biological Physics, Structure, & Design (BPSD)</li>
                         <li>Data Science (DATA)</li>
                         <li>Graduate School (GRDSCH)</li>
@@ -430,7 +477,8 @@
                         <li>Molecular Engineering (MOLENG)</li>
                         <li>Museology (MUSEUM)</li>
                         <li>Near & Middle Eastern Studies (N&MES)</li>
-                        <ul aria-label="Neuroscience">
+                        <li class="category">Neuroscience</li>
+                        <ul>
                             <li>Neurobiology & Behavior (NEUBEH)</li>
                             <li>Neuroscience (NEURO)</li>
                         </ul>
@@ -439,12 +487,15 @@
                         <li>Technology Innovation (TECHIN)</li>
                     </ul>
 
-                    <ul aria-label="Interdisciplinary Undergraduate Programs">
+                    <h3>Interdisciplinary Undergraduate Programs</h3>
+                    <ul>
                         <li>University Academy (ACADEM)</li>
                     </ul>
 
-                    <ul aria-label="Interschool or Intercollege Programs">
-                        <ul aria-label="Bioengineering">
+                    <h3>Interschool or Intercollege Programs</h3>
+                    <ul>
+                        <li class="category">Bioengineering</li>
+                        <ul>
                             <li>Bioengineering (BIOEN)</li>
                             <li>Pharmaceutical Bioengineering (PHARBE)</li>
                         </ul>
@@ -452,7 +503,8 @@
                         <li>University Conjoint (UCONJ)</li>
                     </ul>
 
-                    <ul aria-label="School of Law">
+                    <h3>School of Law</h3>
+                    <ul>
                         <li>Law (LAW)</li>
                         <li>Law (Health) (LAW H)</li>
                         <li>Law (Intellectual Property) (LAW P)</li>
@@ -463,14 +515,17 @@
                         <li>Law E (LAW E)</li>
                     </ul>
 
-                    <ul aria-label="Leadership (UAA)">
+                    <h3>Leadership (UAA)</h3>
+                    <ul>
                         <li>Leadership (LEAD)</li>
                     </ul>
 
-                    <ul aria-label="School of Medicine">
+                    <h3>School of Medicine</h3>
+                    <ul>
                         <li>Anesthesiology (ANEST)</li>
                         <li>Biochemistry (BIOC)</li>
-                        <ul aria-label="Bioengineering">
+                        <li class="category">Bioengineering</li>
+                        <ul>
                             <li>Bioengineering (BIOEN)</li>
                             <li>Pharmaceutical Bioengineering (PHARBE)</li>
                         </ul>
@@ -479,21 +534,24 @@
                         <li>Biomedical Informatics and Med Education (BIME)</li>
                         <li>Comparative Medicine (C MED)</li>
                         <li>Emergency Medicine (MED EM)</li>
-                        <ul aria-label="Family Medicine">
+                        <li class="category">Family Medicine</li>
+                        <ul>
                             <li>Family Medicine (FAMED)</li>
                             <li>Medex (MEDEX)</li>
                         </ul>
                         <li>Genome Sciences (GENOME)</li>
                         <li>Global Health (G H)</li>
                         <li>Health Metrics Sciences (HMS)</li>
-                        <ul aria-label="Human Biology">
+                        <li class="category">Human Biology</li>
+                        <ul>
                             <li>Conjoint (Medicine) (CONJ)</li>
                             <li>Human Biology (HUBIO)</li>
                             <li>Medical Science (MEDSCI)</li>
                         </ul>
                         <li>Immunology (IMMUN)</li>
                         <li>Laboratory Medicine (LAB M)</li>
-                        <ul aria-label="School of Medicine">
+                        <li class="category">School of Medicine</li>
+                        <ul>
                             <li>Elective Clerkships (MEDECK)</li>
                             <li>Medicine (MED)</li>
                             <li>Required Clerkships (MEDRCK)</li>
@@ -505,7 +563,8 @@
                         <li>Ophthalmology (OPHTH)</li>
                         <li>Orthopedics (ORTHP)</li>
                         <li>Otolaryngology,Head & Neck Surgery (OTOHN)</li>
-                        <ul aria-label="Pathology">
+                        <li class="category">Pathology</li>
+                        <ul>
                             <li>Molecular Medicine (MOLMED)</li>
                             <li>Pathology (PATH)</li>
                         </ul>
@@ -515,7 +574,8 @@
                         <li>Psychiatry & Behavioral Sciences (PBSCI)</li>
                         <li>Radiation Oncology (R ONC)</li>
                         <li>Radiology (RADGY)</li>
-                        <ul aria-label="Rehabilitation Medicine">
+                        <li class="category">Rehabilitation Medicine</li>
+                        <ul>
                             <li>Rehab Med - Prosthetics & Orthotics (RHB PO)</li>
                             <li>Rehabilitation Medicine (REHAB)</li>
                         </ul>
@@ -523,7 +583,8 @@
                         <li>Urology (UROL)</li>
                     </ul>
 
-                    <ul aria-label="School of Nursing">
+                    <h3>School of Nursing</h3>
+                    <ul>
                         <li>Infant & Early Childhood Mental Health (IECMH)</li>
                         <li>Nursing (NSG)</li>
                         <li>Nursing (NURS)</li>
@@ -531,10 +592,12 @@
                         <li>Nursing Methods (NMETH)</li>
                     </ul>
 
-                    <ul aria-label="School of Pharmacy">
+                    <h3>School of Pharmacy</h3>
+                    <ul>
                         <li>Medicinal Chemistry (MEDCH)</li>
                         <li>Pharmaceutics (PCEUT)</li>
-                        <ul aria-label="School of Pharmacy">
+                        <li class="category">School of Pharmacy</li>
+                        <ul>
                             <li>Pharmacy (PHARM)</li>
                             <li>Pharmacy (PHRMCY)</li>
                             <li>Pharmacy Practice (PHARMP)</li>
@@ -543,18 +606,21 @@
                         </ul>
                     </ul>
 
-                    <ul aria-label="School of Public Health">
+                    <h3>School of Public Health</h3>
+                    <ul>
                         <li>Biostatistics (BIOST)</li>
                         <li>Environmental Health (ENV H)</li>
                         <li>Epidemiology (EPI)</li>
                         <li>Global Health (G H)</li>
-                        <ul aria-label="Health Services">
+                        <li class="category">Health Services</li>
+                        <ul>
                             <li>Health Informatics & Hlth Informtn Mgmt (HIHIM)</li>
                             <li>Health Services (HSERV)</li>
                             <li>Health Services Management (HSMGMT)</li>
                         </ul>
                         <li>Pathobiology (PABIO)</li>
-                        <ul aria-label="School of Public Health">
+                        <li class="category">School of Public Health</li>
+                        <ul>
                             <li>Nutritional Science (NUTR)</li>
                             <li>Public Health Genetics (PHG)</li>
                             <li>Public Health Interdisciplinary (PHI)</li>
@@ -562,20 +628,23 @@
                         </ul>
                     </ul>
 
-                    <ul aria-label="Provost">
+                    <h3>Provost</h3>
+                    <ul>
                         <li>Aerospace Studies (Air Force ROTC) (A S)</li>
                         <li>Military Science (M SCI)</li>
                         <li>Naval Science (N SCI)</li>
                     </ul>
 
-                    <ul aria-label="Evans School of Public Policy and Governance">
+                    <h3>Evans School of Public Policy and Governance</h3>
+                    <ul>
                         <li>Public Policy and Governance</li>
                         <li>Public Affairs Executive MPA (PA EX)</li>
                         <li>Public Policy (PUBPOL)</li>
                         <li>Public Policy and Management (PPM)</li>
                     </ul>
 
-                    <ul aria-label="School of Social Work">
+                    <h3>School of Social Work</h3>
+                    <ul>
                         <li>Social Work</li>
                         <li>Social Welfare (SOC WL)</li>
                         <li>Social Welfare (Basw) (SOC WF)</li>
@@ -590,137 +659,10 @@
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.4.6/fuse.min.js"></script>
-    <script src="./js/jquery.ba-throttle-debounce.min.js"></script>
     <script src="https://pagination.js.org/dist/2.1.5/pagination.min.js"></script>
-    <script>
-        var evaluations = []
-        var courses = []
-        var fuse;
-        var options = {
-            shouldSort: true,
-            tokenize: true,
-            threshold: 0.5,
-            location: 0,
-            distance: 5,
-            maxPatternLength: 30,
-            minMatchCharLength: 3,
-            keys: ["department", "course", "facultyName", "name", "section"]
-        };
-        $(function() {
-            $.getJSON("./courses.json", function(json) {
-                courses = json;
-                $.getJSON("./cec.json", function(json) {
-                    $.each(json, function(idx, evaluation) {
-                        var name = null;
-                        const department = evaluation.department;
-                        const courseNumber = evaluation.course;
-                        if (department in courses) {
-                            allDepartmentalCourses = courses[department]
-                            if (courseNumber in allDepartmentalCourses) {
-                                name = allDepartmentalCourses[courseNumber]['name']
-                            }
-                        }
-                        evaluation['name'] = name
-                    });
-                    evaluations = json;
-                    fuse = new Fuse(evaluations, options);
-                });
-            });
-        });
-
-        // FIXME: Load translations
-        $('#languages').dropdown({
-            fullTextSearch: true,
-            onChange: (value) => {
-                localStorage.setItem('language', value)
-                console.log(value)
-            }
-        }).dropdown(
-            'set selected', localStorage.getItem('language')
-        );
-        $('#searchBar').keyup($.throttle(250, populateResults));
-
-        function populateResults() {
-            var query = $("#searchBar").val();
-            if (query) {
-                var result = fuse.search(query);
-                $('#pagination').pagination({
-                    dataSource: result,
-                    showGoInput: true,
-                    formatGoInput: 'jump to page <%= input %>',
-                    callback: function(evaluations, pagination) {
-                        var html = showEvaluations(evaluations);
-                        $('#searchResult').html(html);
-                    }
-                })
-                $('#pagination').show()
-                $('#searchResult').show()
-                $("#departments").slideUp()
-            } else {
-                $("#departments").slideDown()
-                $('#searchResult').hide()
-                $('#pagination').hide()
-            }
-        }
-
-        function groupBy(list, keyGetter) {
-            const map = new Map();
-            list.forEach((item) => {
-                const key = keyGetter(item);
-                const collection = map.get(key);
-                if (!collection) {
-                    map.set(key, [item]);
-                } else {
-                    collection.push(item);
-                }
-            });
-            return map;
-        }
-
-        function showEvaluations(evaluations) {
-            const categorized = groupBy(evaluations, evaluation => `${evaluation.department} ${evaluation.course}`)
-            var html = '<ul>';
-            for (const [fullCourseName, evaluations] of categorized.entries()) {
-                var innerHTML = ""
-                var name;
-                $.each(evaluations, function(idx, evaluation) {
-                    name = evaluation.name;
-                    innerHTML += showEvaluation(evaluation);
-                });
-                if (name) {} else name = "<emphasis>(No Longer Offered)</emphasis>";
-                html += `
-                    <h3>
-                        ${fullCourseName} ${name}
-                        <span class="right">View in 
-                            <a href="https://myplan.uw.edu/course/#/courses/${fullCourseName}" target="_blank">
-                            MyPlan
-                            </a>
-                        </span>
-                    </h3>
-                    
-                    <ul>
-                        ${innerHTML}
-                    </ul>
-                `
-            }
-            return html + '</ul>';
-        }
-
-        function showEvaluation(evaluation) {
-            department = evaluation.department;
-            number = evaluation.course;
-            return `
-                <li class="evaluation-entry">
-                    <a href="https://www.washington.edu/cec/${evaluation.url}">
-                        <span>${evaluation.quarter}</span>
-                        <span>Section ${evaluation.section}</span>
-                        by
-                        <span>${evaluation.facultyName} (${evaluation.facultyType})</span>
-                    </a>
-                </li>
-            `
-        }
-    </script>
+    <script src="./js/jquery.ba-throttle-debounce.min.js"></script>
+    <script src="./js/jquery.localize.min.js"></script>
+    <script src="./js/main.js"></script>
 </body>
 
 </html>
