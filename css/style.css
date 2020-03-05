@@ -79,7 +79,8 @@ details {
 }
 
 details ul,
-details form {
+details form,
+details h3 {
     color: var(--color);
 }
 
@@ -93,10 +94,6 @@ summary {
 
 summary>h2 {
     display: inline;
-}
-
-#departments>summary {
-    column-span: all;
 }
 
 select {
@@ -171,28 +168,32 @@ h3>.right {
 
 /* Default Department Selection */
 
-#departments {
+.departments {
     column-count: 2;
 }
 
-#departments ul {
+.departments>summary {
+    column-span: all;
+}
+
+.departments ul {
     -webkit-margin-before: 0;
     -webkit-margin-after: 0;
 }
 
-#departments h2 {
-    column-span: all;
-    margin-top: 0;
-    height: 30px;
-}
-
-#departments h3 {
+.departments h3 {
     margin: 0;
     width: 100%;
 }
 
-#departments>ul>li:last-child {
-    margin-bottom: 22px;
+.departments.cn>ul>li:last-child,
+.departments.cn>ul>ul:last-child {
+    margin-bottom: 45px;
+}
+
+.departments.en>ul>li:last-child,
+.departments.en>ul>ul:last-child {
+    margin-bottom: 40px;
 }
 
 

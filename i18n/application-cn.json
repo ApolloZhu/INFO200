@@ -9,5 +9,10 @@
     "campus": "校区",
     "quarter": "学期",
     "gen-ed": "通识教育学分类型",
-    "departments": "学院/科系/项目"
+    "Seattle": "西雅图",
+    "Bothell": "博塞尔",
+    "Tacoma": "塔科马",
+    "dept-Seattle": "西雅图校区学院/科系/项目",
+    "dept-Bothell": "博塞尔校区学院/科系/项目",
+    "dept-Tacoma": "塔科马校区学院/科系/项目"
 }

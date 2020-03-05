@@ -1,7 +1,7 @@
 var evaluations = []
 var courses = []
 var fuse;
-var options = {
+const options = {
     shouldSort: true,
     tokenize: true,
     threshold: 0.6,
@@ -16,7 +16,7 @@ $(function() {
         courses = json;
         $.getJSON("./data/cec.json", function(json) {
             $.each(json, function(idx, evaluation) {
-                var name = null;
+                let name = null;
                 const department = evaluation.department;
                 const courseNumber = evaluation.course;
                 if (department in courses) {
@@ -43,8 +43,11 @@ $('#languages').dropdown({
                 location.reload();
             }
         } else {
-            $("[data-localize]").localize("i18n/application", { language: value });
+            $("[data-localize]")
+                .localize("i18n/application", { language: value })
+                .localize("i18n/departments", { language: value });
         }
+        $(".departments").removeClass(lang).addClass(value)
         lang = value;
     }
 }).dropdown('set selected', lang);
@@ -52,16 +55,16 @@ $('#languages').dropdown({
 $('#searchBar').keyup($.throttle(750, populateResults));
 
 function populateResults() {
-    var query = $("#searchBar").val();
+    const query = $("#searchBar").val();
     if (query) {
-        var result = fuse.search(query);
+        const result = fuse.search(query);
         if (result) {
             $('#pagination').pagination({
                 dataSource: result,
                 showGoInput: true,
                 formatGoInput: 'jump to page <%= input %>',
                 callback: function(evaluations, pagination) {
-                    var html = showEvaluations(evaluations);
+                    const html = showEvaluations(evaluations);
                     $('#searchResult').html(html);
                 }
             })
@@ -92,10 +95,10 @@ function groupBy(list, keyGetter) {
 
 function showEvaluations(evaluations) {
     const categorized = groupBy(evaluations, evaluation => `${evaluation.department} ${evaluation.course}`)
-    var html = '<ul>';
+    let html = '<ul>';
     for (const [fullCourseName, evaluations] of categorized.entries()) {
-        var innerHTML = ""
-        var name;
+        let innerHTML = ""
+        let name;
         $.each(evaluations, function(idx, evaluation) {
             name = evaluation.name;
             innerHTML += showEvaluation(evaluation);
