@@ -95,7 +95,7 @@ function groupBy(list, keyGetter) {
 
 function showEvaluations(evaluations) {
     const categorized = groupBy(evaluations, evaluation => `${evaluation.department} ${evaluation.course}`)
-    let html = '<ul>';
+    let html = '';
     for (const [fullCourseName, evaluations] of categorized.entries()) {
         let innerHTML = ""
         let name;
@@ -117,7 +117,7 @@ function showEvaluations(evaluations) {
             <ul>${innerHTML}</ul>
         `
     }
-    return html + '</ul>';
+    return html;
 }
 
 function showEvaluation(evaluation) {
