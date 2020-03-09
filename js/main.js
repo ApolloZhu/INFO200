@@ -117,6 +117,7 @@ $('input[name=dept]').click(function(e) {
     populateSelectedDepartmentDisplay();
 });
 
+$("#dept-filters").hide();
 $(document).on("click", "i[data-dept]", function(e) {
     const department = this.getAttribute('data-dept')
     selectedDepartments.delete(department);
