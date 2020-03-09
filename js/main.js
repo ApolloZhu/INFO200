@@ -1,4 +1,5 @@
 var myWorker = new Worker('./js/search.js');
+var selectedDepartments = new Set();
 
 var previousWidth = null;
 
@@ -23,6 +24,8 @@ $(function() {
     for (const filter of filters) {
         $(`#${filter[1]}`).attr('checked', 'checked');
     }
+    selectedDepartments = new Set(filters.getAll("dept"));
+    populateSelectedDepartmentDisplay();
     myWorker.postMessage({
         "query": "init",
         "urlParams": urlParams
@@ -135,4 +138,32 @@ function showEvaluation(evaluation) {
             </a>
         </li>
     `
+}
+
+$('input[name=dept]').click(function(e) {
+    const value = $(this).attr('value');
+    if ($(this).prop("checked")) {
+        selectedDepartments.add(value);
+    } else {
+        selectedDepartments.delete(value);
+    }
+    populateSelectedDepartmentDisplay();
+});
+
+function populateSelectedDepartmentDisplay() {
+    let html = ""
+    for (const department of selectedDepartments) {
+        html += `
+            <div class="ui image label">
+                ${department}
+                <i class="delete icon"></i>
+            </div>
+        `;
+    }
+    $("#selected-departments").html(html);
+    if (selectedDepartments.size) {
+        $("#dept-filters").slideDown();
+    } else {
+        $("#dept-filters").slideUp();
+    }
 }

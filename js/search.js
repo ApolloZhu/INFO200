@@ -37,7 +37,6 @@ function loadData(then) {
                         evaluation['name'] = name;
                     }
                     evaluations = json;
-                    console.log(evaluations);
                     globalFuse = new Fuse(evaluations, options);
                     if (then) then();
                 })
@@ -90,18 +89,14 @@ function search(query, filters) {
         if (query) {
             const fuse = new Fuse(filtered, options);
             const result = fuse.search(query);
-            console.log("result")
             postMessage(result)
         } else {
-            console.log("filtered")
             postMessage(filtered);
         }
     } else {
         if (query) {
-            console.log(query);
             const result = globalFuse.search(query);
             postMessage(result);
-            console.log("all");
         } else {
             console.log("Yousa?")
         }
