@@ -50,19 +50,22 @@
                 <details id="filters">
                     <summary>
                         <h2 data-localize="filters">Filters</h2>
+                        <span class="right">
+                            <a href="." data-localize="filters-clear">Clear</a>
+                        </span>
                     </summary>
 
                     <form action="" id="filters-form" method="GET">
                         <fieldset>
                             <legend data-localize="campus">Campus</legend>
                             <!--Auto detect campus?-->
-                            <input type="checkbox" name="quarter" id="Seattle" value="Seattle">
+                            <input type="checkbox" name="campus" id="Seattle" value="Seattle">
                             <label for="Seattle" data-localize="Seattle">Seattle</label>
                             <br>
-                            <input type="checkbox" name="quarter" id="Bothell" value="Bothell">
+                            <input type="checkbox" name="campus" id="Bothell" value="Bothell">
                             <label for="Bothell" data-localize="Bothell">Bothell</label>
                             <br>
-                            <input type="checkbox" name="quarter" id="Tacoma" value="Tacoma">
+                            <input type="checkbox" name="campus" id="Tacoma" value="Tacoma">
                             <label for="Tacoma" data-localize="Tacoma">Tacoma</label>
                         </fieldset>
                         <fieldset>
@@ -1900,12 +1903,6 @@
                                 </label>
                             </li>
                             <li>
-                                <label for="G H">
-                                    <input type="checkbox" name="dept" id="G H" value="G H" form="filters-form">
-                                    Global Health (G H)
-                                </label>
-                            </li>
-                            <li>
                                 <label for="HUBIO">
                                     <input type="checkbox" name="dept" id="HUBIO" value="HUBIO" form="filters-form">
                                     Human Biology (HUBIO)
@@ -2225,12 +2222,6 @@
                                     Epidemiology (EPI)
                                 </label>
                             </li>
-                            <li>
-                                <label for="G H">
-                                    <input type="checkbox" name="dept" id="G H" value="G H" form="filters-form">
-                                    Global Health (G H)
-                                </label>
-                            </li>
                             <li data-localize="Health Services">Health Services</li>
                             <ul>
                                 <li>
@@ -2331,12 +2322,6 @@
                         <h3 data-localize="Undergraduate Interdisciplinary Programs">Undergraduate Interdisciplinary Programs
                         </h3>
                         <ul>
-                            <li>
-                                <label for="ARCTIC">
-                                    <input type="checkbox" name="dept" id="ARCTIC" value="ARCTIC" form="filters-form">
-                                    Arctic Studies (ARCTIC)
-                                </label>
-                            </li>
                             <li>
                                 <label for="HONORS">
                                     <input type="checkbox" name="dept" id="HONORS" value="HONORS" form="filters-form">

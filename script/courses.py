@@ -23,6 +23,14 @@ def parse_campus(campus, result):
     for department in departments:
         parse(campus, department, result)
 
+def describe_campus(campus):
+    if campus == 'crscat':
+        return "Seattle"
+    elif campus == 'crscatb':
+        return "Bothell"
+    elif campus =='crscatt':
+        return "Tacoma"
+
 def parse(campus, department, result):
     r = requests.get(f'https://www.washington.edu/students/{campus}/{department}')
     soup = BeautifulSoup(r.text, 'html.parser')
@@ -31,6 +39,7 @@ def parse(campus, department, result):
         depart = course["department"]
         num = course["number"]
         info = course["info"]
+        info["campus"] = describe_campus(campus)
         if depart not in result:
             result[depart] = dict()
         result[depart][num] = info
