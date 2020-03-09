@@ -18,9 +18,14 @@ function collapseFiltersIfNeeded() {
 }
 
 $(function() {
+    const urlParams = window.location.search;
+    const filters = new URLSearchParams(urlParams);
+    for (const filter of filters) {
+        $(`#${filter[1]}`).attr('checked', 'checked');
+    }
     myWorker.postMessage({
         "query": "init",
-        "urlParams": window.location.search
+        "urlParams": urlParams
     })
     $(window).resize($.debounce(500, collapseFiltersIfNeeded));
     collapseFiltersIfNeeded();
