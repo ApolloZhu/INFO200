@@ -53,7 +53,7 @@ onmessage = function(event) {
     }
     if (query == "init") {
         loadData(() => {
-            search(null, filters);
+            search(query, filters);
         })
     } else {
         search(query, filters);
@@ -86,15 +86,21 @@ function search(query, filters) {
             }
             return true
         });
-        if (query) {
-            const fuse = new Fuse(filtered, options);
-            const result = fuse.search(query);
-            postMessage(result)
-        } else {
+        if (!query || query == "search") {
+            console.log("filtered");
             postMessage(filtered);
+        } else {
+            if (query != "init") {
+                console.log(query);
+                const fuse = new Fuse(filtered, options);
+                const result = fuse.search(query);
+                postMessage(result)
+            }
         }
     } else {
         if (query) {
+            if (query == "init") return;
+            console.log(query);
             const result = globalFuse.search(query);
             postMessage(result);
         } else {

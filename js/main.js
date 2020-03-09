@@ -32,6 +32,12 @@ $(function() {
     })
     $(window).resize($.debounce(500, collapseFiltersIfNeeded));
     collapseFiltersIfNeeded();
+    $(window).keydown(function(event) {
+        if (event.keyCode == 13) {
+            event.preventDefault();
+            return false;
+        }
+    });
 });
 
 var lang = localStorage.getItem('language');
@@ -53,11 +59,16 @@ $('#languages').dropdown({
     }
 }).dropdown('set selected', lang);
 
-$("#searchButton").click(populateResults);
+$("#searchButton").click(() => populateResults(true));
 $('#searchBar').keyup($.throttle(750, populateResults));
 
-function populateResults() {
-    const query = $("#searchBar").val();
+$("#not-found").hide()
+
+function populateResults(force) {
+    let query = $("#searchBar").val();
+    if (force && !query) {
+        query = "search";
+    }
     if (query) {
         myWorker.postMessage({
             "query": query,
@@ -65,6 +76,7 @@ function populateResults() {
         });
     } else {
         $("#departments").slideDown()
+        $("#not-found").hide()
         $('#searchResult').hide()
         $('#pagination').hide()
     }
@@ -72,7 +84,8 @@ function populateResults() {
 
 myWorker.onmessage = function(event) {
     const result = event.data;
-    if (result) {
+    const found = result && result.length;
+    if (found) {
         $('#pagination').pagination({
             dataSource: result,
             callback: function(evaluations, pagination) {
@@ -82,8 +95,12 @@ myWorker.onmessage = function(event) {
         })
         $('#pagination').show()
         $('#searchResult').show()
+        $("#not-found").hide()
     }
     $("#departments").slideUp()
+    if (!found) {
+        $("#not-found").show()
+    }
 }
 
 function groupBy(list, keyGetter) {

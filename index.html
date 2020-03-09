@@ -29,7 +29,7 @@
                         </div>
                         <div class="scrolling menu">
                             <div class="item" data-value="en" data-english="English"><span class="description">English</span> English </div>
-                            <!-- <div class="item" data-value="es" data-english="Spanish"><span class="description">Español</span> Spanish </div> -->
+                            <div class="item" data-value="fr" data-english="French"><span class="description">français</span> French </div>
                             <div class="item" data-value="cn" data-english="Chinese"><span class="description">简体中文</span> Chinese </div>
                         </div>
                     </div>
@@ -39,8 +39,8 @@
     </header>
     <div class="container">
         <div id="search">
-            <input type="text" data-localize="search-placeholder" placeholder="Search for: INFO 200" id="searchBar" form="filters-form" autofocus>
-            <button type="submit" id="searchButton" form="filters-form">
+            <input type="text" data-localize="search-placeholder" placeholder="Search for: INFO 200" id="searchBar" autofocus>
+            <button id="searchButton"> 
                 <i class="material-icons">search</i>
                 <span data-localize="search">Search</span>
             </button>
@@ -96,6 +96,10 @@
                 </details>
             </aside>
             <main>
+                <div id="not-found">
+                    <h2>Found no matching course evaluations.</h2>
+                    Try search for something else or clear the filters?
+                </div>
                 <div id="departments">
                     <details class="departments" open>
                         <summary>
