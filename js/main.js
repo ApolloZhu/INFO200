@@ -1,7 +1,30 @@
 var myWorker = new Worker('./js/search.js');
+
+var previousWidth = null;
+
+function collapseFiltersIfNeeded() {
+    const isOnMobile = (width) => width < 767;
+    const width = $(window).width()
+    if (isOnMobile(width)) {
+        if (!isOnMobile(previousWidth)) {
+            $('#filters').removeAttr('open');
+        }
+    } else {
+        if (isOnMobile(previousWidth)) {
+            $('#filters').attr('open', '');
+        }
+    }
+    previousWidth = width
+}
+
 $(function() {
-    myWorker.postMessage("init")
+    myWorker.postMessage({
+        "query": "init"
+    })
+    $(window).resize($.debounce(500, collapseFiltersIfNeeded));
+    collapseFiltersIfNeeded();
 });
+
 
 var lang = localStorage.getItem('language');
 $('#languages').dropdown({
@@ -22,12 +45,16 @@ $('#languages').dropdown({
     }
 }).dropdown('set selected', lang);
 
-$('#searchBar').keyup($.throttle(500, populateResults));
+$('#searchBar').keyup($.throttle(750, populateResults));
 
 function populateResults() {
+    const urlParams = window.location.search;
     const query = $("#searchBar").val();
     if (query) {
-        myWorker.postMessage(query);
+        myWorker.postMessage({
+            "urlParams": urlParams,
+            "query": query
+        });
     } else {
         $("#departments").slideDown()
         $('#searchResult').hide()

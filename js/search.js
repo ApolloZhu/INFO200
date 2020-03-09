@@ -21,7 +21,6 @@ function loadData() {
             fetch("../data/cec.json")
                 .then(res => res.json())
                 .then((json) => {
-                    courses = json;
                     for (var evaluation of json) {
                         let name = null;
                         const department = evaluation.department;
@@ -41,9 +40,10 @@ function loadData() {
         .catch(err => { throw err });
 }
 
-
 onmessage = function(event) {
-    query = event.data;
+    const query = event.data.query;
+    const filters = new URLSearchParams(event.data.urlParams);
+
     if (query == "init") {
         loadData()
     } else {
