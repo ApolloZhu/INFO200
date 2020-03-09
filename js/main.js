@@ -150,13 +150,20 @@ $('input[name=dept]').click(function(e) {
     populateSelectedDepartmentDisplay();
 });
 
+$(document).on("click", "i[data-dept]", function(e) {
+    const department = this.getAttribute('data-dept')
+    selectedDepartments.delete(department);
+    $(`#${department}`).prop("checked", false);
+    populateSelectedDepartmentDisplay();
+});
+
 function populateSelectedDepartmentDisplay() {
     let html = ""
     for (const department of selectedDepartments) {
         html += `
-            <div class="ui image label">
+            <div class="ui image label" >
                 ${department}
-                <i class="delete icon"></i>
+                <i class="delete icon" data-dept="${department}"></i>
             </div>
         `;
     }
