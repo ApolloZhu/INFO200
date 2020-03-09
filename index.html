@@ -40,19 +40,19 @@
     <div class="container">
         <div id="search">
             <input type="text" data-localize="search-placeholder" placeholder="Search for: INFO 200" id="searchBar" autofocus>
-            <button type="submit" id="searchButton">
+            <button type="submit" id="searchButton" form="filters-form">
                 <i class="material-icons">search</i>
                 <span data-localize="search">Search</span>
             </button>
         </div>
         <div class="main">
             <aside>
-                <details id="filters" open>
+                <details id="filters">
                     <summary>
                         <h2 data-localize="filters">Filters</h2>
                     </summary>
 
-                    <form action="">
+                    <form action="" id="filters-form" method="GET">
                         <fieldset>
                             <legend data-localize="campus">Campus</legend>
                             <!--Auto detect campus?-->
@@ -97,267 +97,267 @@
                         <ul>
                             <li data-localize="American Ethnic Studies">American Ethnic Studies</li>
                             <ul>
-                                <li><a href="?dept=AFRAM">Afro-American Studies (AFRAM)</a></li>
-                                <li><a href="?dept=AES">American Ethnic Studies (AES)</a></li>
-                                <li><a href="?dept=AAS">Asian-American Studies (AAS)</a></li>
-                                <li><a href="?dept=CHSTU">Chicano Studies (CHSTU)</a></li>
-                                <li><a href="?dept=SWA">Swahili (SWA)</a></li>
-                                <li><a href="?dept=TAGLG">Tagalog (TAGLG)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="AFRAM">Afro-American Studies (AFRAM)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="AES">American Ethnic Studies (AES)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="AAS">Asian-American Studies (AAS)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="CHSTU">Chicano Studies (CHSTU)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="SWA">Swahili (SWA)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="TAGLG">Tagalog (TAGLG)</a></li>
                             </ul>
 
-                            <li><a href="?dept=AIS">American Indian Studies (AIS)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="AIS">American Indian Studies (AIS)</a></li>
                             <li data-localize="Anthropology">Anthropology</li>
                             <ul>
-                                <li><a href="?dept=ANTH">Anthropology (ANTH)</a></li>
-                                <li><a href="?dept=ARCHY">Archaeology (ARCHY)</a></li>
-                                <li><a href="?dept=BIO A">Biological Anthropology (BIO A)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="ANTH">Anthropology (ANTH)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="ARCHY">Archaeology (ARCHY)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="BIO A">Biological Anthropology (BIO A)</a></li>
                             </ul>
                             <li data-localize="Applied Mathematics">Applied Mathematics</li>
                             <ul>
-                                <li><a href="?dept=AMATH">Applied Mathematics (AMATH)</a></li>
-                                <li><a href="?dept=CFRM">Computational Finance and Risk Management (CFRM)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="AMATH">Applied Mathematics (AMATH)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="CFRM">Computational Finance and Risk Management (CFRM)</a></li>
                             </ul>
-                            <li><a href="?dept=ARCTIC">Arctic Studies (ARCTIC)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="ARCTIC">Arctic Studies (ARCTIC)</a></li>
                             <li data-localize="School of Art, Art History, and Design">School of Art, Art History, and Design</li>
                             <ul>
-                                <li><a href="?dept=ART">Art (ART)</a></li>
-                                <li><a href="?dept=ART H">Art History (ART H)</a></li>
-                                <li><a href="?dept=DESIGN">Design (DESIGN)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="ART">Art (ART)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="ART H">Art History (ART H)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="DESIGN">Design (DESIGN)</a></li>
                             </ul>
 
                             <li data-localize="Asian Languages and Literature">Asian Languages and Literature</li>
                             <ul>
-                                <li><a href="?dept=ASIAN">Asian Languages and Literature (ASIAN)</a></li>
-                                <li><a href="?dept=BENG">Bengali (BENG)</a></li>
-                                <li><a href="?dept=CHIN">Chinese (CHIN)</a></li>
-                                <li><a href="?dept=HINDI">Hindi (HINDI)</a></li>
-                                <li><a href="?dept=INDN">Indian (INDN)</a></li>
-                                <li><a href="?dept=INDO">Indonesian (INDO)</a></li>
-                                <li><a href="?dept=JAPAN">Japanese (JAPAN)</a></li>
-                                <li><a href="?dept=KOREAN">Korean (KOREAN)</a></li>
-                                <li><a href="?dept=SNKRT">Sanskrit (SNKRT)</a></li>
-                                <li><a href="?dept=THAI">Thai (THAI)</a></li>
-                                <li><a href="?dept=URDU">Urdu (URDU)</a></li>
-                                <li><a href="?dept=VIET">Vietnamese (VIET)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="ASIAN">Asian Languages and Literature (ASIAN)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="BENG">Bengali (BENG)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="CHIN">Chinese (CHIN)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="HINDI">Hindi (HINDI)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="INDN">Indian (INDN)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="INDO">Indonesian (INDO)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="JAPAN">Japanese (JAPAN)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="KOREAN">Korean (KOREAN)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="SNKRT">Sanskrit (SNKRT)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="THAI">Thai (THAI)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="URDU">Urdu (URDU)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="VIET">Vietnamese (VIET)</a></li>
                             </ul>
-                            <li><a href="?dept=ASTBIO">Astrobiology and Early Evolution (ASTBIO)</a></li>
-                            <li><a href="?dept=ASTR">Astronomy (ASTR)</a></li>
-                            <li><a href="?dept=biology">Biology (BIOL) </a></li>
-                            <li><a href="?dept=CS SS">Center for Statistics and Social Sciences (CS SS)</a></li>
-                            <li><a href="?dept=CSDE">Center for Studies in Demography and Ecology (CSDE)</a></li>
-                            <li><a href="?dept=HUM">Center for the Humanities (HUM)</a></li>
-                            <li><a href="?dept=CHEM">Chemistry (CHEM)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="ASTBIO">Astrobiology and Early Evolution (ASTBIO)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="ASTR">Astronomy (ASTR)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="biology">Biology (BIOL) </a></li>
+                            <li><a href="javascript:void(0)" data-dept="CS SS">Center for Statistics and Social Sciences (CS SS)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="CSDE">Center for Studies in Demography and Ecology (CSDE)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="HUM">Center for the Humanities (HUM)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="CHEM">Chemistry (CHEM)</a></li>
                             <li data-localize="Cinema and Media Studies">Cinema and Media Studies</li>
                             <ul>
-                                <li><a href="?dept=CMS">Cinema and Media Studies (CMS)</a></li>
-                                <li><a href="?dept=C LIT">Comparative Literature (C LIT)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="CMS">Cinema and Media Studies (CMS)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="C LIT">Comparative Literature (C LIT)</a></li>
                             </ul>
 
                             <li data-localize="Classics">Classics</li>
                             <ul>
-                                <li><a href="?dept=CL AR">Classical Archaeology (CL AR)</a></li>
-                                <li><a href="?dept=CL LI">Classical Linguistics (CL LI)</a></li>
-                                <li><a href="?dept=CLAS">Classics (CLAS)</a></li>
-                                <li><a href="?dept=GREEK">Greek (GREEK)</a></li>
-                                <li><a href="?dept=LATIN">Latin (LATIN)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="CL AR">Classical Archaeology (CL AR)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="CL LI">Classical Linguistics (CL LI)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="CLAS">Classics (CLAS)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="GREEK">Greek (GREEK)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="LATIN">Latin (LATIN)</a></li>
                             </ul>
                             <li data-localize="Communication">Communication</li>
                             <ul>
-                                <li><a href="?dept=com">Communication (COM) </a></li>
-                                <li><a href="?dept=commld">Communication Leadership (COMMLD) </a></li>
+                                <li><a href="javascript:void(0)" data-dept="com">Communication (COM) </a></li>
+                                <li><a href="javascript:void(0)" data-dept="commld">Communication Leadership (COMMLD) </a></li>
                             </ul>
-                            <li><a href="?dept=CHID">Comparative History of Ideas (CHID)</a></li>
-                            <li><a href="?dept=DANCE">Dance (DANCE)</a></li>
-                            <li><a href="?dept=DXARTS">Digital Arts and Experimental Media (DXARTS)</a></li>
-                            <li><a href="?dept=DIS ST">Disability Studies (DIS ST)</a></li>
-                            <li><a href="?dept=DRAMA">Drama (DRAMA)</a></li>
-                            <li><a href="?dept=ECON">Economics (ECON)</a></li>
-                            <li><a href="?dept=ENGL">English (ENGL)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="CHID">Comparative History of Ideas (CHID)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="DANCE">Dance (DANCE)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="DXARTS">Digital Arts and Experimental Media (DXARTS)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="DIS ST">Disability Studies (DIS ST)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="DRAMA">Drama (DRAMA)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="ECON">Economics (ECON)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="ENGL">English (ENGL)</a></li>
 
                             <li data-localize="French and Italian Studies">French and Italian Studies</li>
                             <ul>
-                                <li><a href="?dept=FRENCH">French (FRENCH)</a></li>
-                                <li><a href="?dept=ITAL">Italian (ITAL)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="FRENCH">French (FRENCH)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="ITAL">Italian (ITAL)</a></li>
                             </ul>
-                            <li><a href="?dept=GWSS">Gender, Women, and Sexuality Studies (GWSS)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="GWSS">Gender, Women, and Sexuality Studies (GWSS)</a></li>
 
                             <li data-localize="General Studies">General Studies</li>
                             <ul>
-                                <li><a href="?dept=GEN ST">General Studies (GEN ST)</a></li>
-                                <li><a href="?dept=INDIV">Individualized Studies (INDIV)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="GEN ST">General Studies (GEN ST)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="INDIV">Individualized Studies (INDIV)</a></li>
                             </ul>
-                            <li><a href="?dept=GEOG">Geography (GEOG)</a></li>
-                            <li><a href="?dept=GERMAN">Germanics (GERMAN)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="GEOG">Geography (GEOG)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="GERMAN">Germanics (GERMAN)</a></li>
 
                             <li data-localize="History">History</li>
                             <ul>
-                                <li><a href="?dept=HSTAM">Ancient and Medieval History (HSTAM)</a></li>
-                                <li><a href="?dept=HSTCMP">Comparative and Transregional History (HSTCMP)</a></li>
-                                <li><a href="?dept=HSTAFM">History of Africa and the Middle East (HSTAFM)</a></li>
-                                <li><a href="?dept=HSTAS">History of Asia (HSTAS)</a></li>
-                                <li><a href="?dept=HSTLAC">History of Latin America and the Caribbean (HSTLAC)</a></li>
-                                <li><a href="?dept=HSTEU">History of Modern Europe (HSTEU)</a></li>
-                                <li><a href="?dept=HSTAA">History of North America (United States and Canada) (HSTAA)</a></li>
-                                <li><a href="?dept=HSTRY">History Seminars and Independent Studies (HSTRY)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="HSTAM">Ancient and Medieval History (HSTAM)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="HSTCMP">Comparative and Transregional History (HSTCMP)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="HSTAFM">History of Africa and the Middle East (HSTAFM)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="HSTAS">History of Asia (HSTAS)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="HSTLAC">History of Latin America and the Caribbean (HSTLAC)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="HSTEU">History of Modern Europe (HSTEU)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="HSTAA">History of North America (United States and Canada) (HSTAA)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="HSTRY">History Seminars and Independent Studies (HSTRY)</a></li>
                             </ul>
-                            <li><a href="?dept=HPS">History and Philosophy of Science (HPS)</a></li>
-                            <li><a href="?dept=INTSCI">Integrated Science (INTSCI)</a></li>
-                            <li><a href="?dept=ISS">Integrated Social Sciences (ISS)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="HPS">History and Philosophy of Science (HPS)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="INTSCI">Integrated Science (INTSCI)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="ISS">Integrated Social Sciences (ISS)</a></li>
                             <li data-localize="Jackson School of International Studies">Jackson School of International Studies</li>
                             <ul>
-                                <li><a href="?dept=RELIG">Comparative Religion (RELIG)</a></li>
-                                <li><a href="?dept=JSIS">International Studies (Gateway/Core) (JSIS)</a></li>
-                                <li><a href="?dept=JSIS A">International Studies (Area Studies) (JSIS A)</a></li>
-                                <li><a href="?dept=JSIS B">International Studies (Global/Thematic) (JSIS B)</a></li>
-                                <li><a href="?dept=JSIS C">International Studies (Comparative Religion/Jewish Studies) (JSIS C)</a></li>
-                                <li><a href="?dept=JSIS D">International Studies (JSIS D)</a></li>
-                                <li><a href="?dept=JSIS E">International Studies (Language) (JSIS E)</a></li>
-                                <li><a href="?dept=JEW ST">Jewish Studies (JEW ST)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="RELIG">Comparative Religion (RELIG)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="JSIS">International Studies (Gateway/Core) (JSIS)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="JSIS A">International Studies (Area Studies) (JSIS A)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="JSIS B">International Studies (Global/Thematic) (JSIS B)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="JSIS C">International Studies (Comparative Religion/Jewish Studies) (JSIS C)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="JSIS D">International Studies (JSIS D)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="JSIS E">International Studies (Language) (JSIS E)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="JEW ST">Jewish Studies (JEW ST)</a></li>
                             </ul>
-                            <li><a href="?dept=LSJ">Law, Societies, and Justice (LSJ)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="LSJ">Law, Societies, and Justice (LSJ)</a></li>
 
                             <li data-localize="Linguistics">Linguistics</li>
                             <ul>
-                                <li><a href="?dept=ASL">American Sign Language (ASL)</a></li>
-                                <li><a href="?dept=LING">Linguistics (LING)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="ASL">American Sign Language (ASL)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="LING">Linguistics (LING)</a></li>
                             </ul>
-                            <li><a href="?dept=math">Mathematics (MATH) </a></li>
+                            <li><a href="javascript:void(0)" data-dept="math">Mathematics (MATH) </a></li>
 
                             <li data-localize="Music">Music</li>
                             <ul>
-                                <li><a href="?dept=music">Music (MUSIC) </a></li>
-                                <li><a href="?dept=MUSAP">Music - Applied (MUSAP)</a></li>
-                                <li><a href="?dept=MUSED">Music Education (MUSED)</a></li>
-                                <li><a href="?dept=MUSEN">Music Ensemble (MUSEN)</a></li>
-                                <li><a href="?dept=MUHST">Music History (MUHST)</a></li>
-                                <li><a href="?dept=MUSICP">Music Performance (MUSICP)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="music">Music (MUSIC) </a></li>
+                                <li><a href="javascript:void(0)" data-dept="MUSAP">Music - Applied (MUSAP)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="MUSED">Music Education (MUSED)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="MUSEN">Music Ensemble (MUSEN)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="MUHST">Music History (MUHST)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="MUSICP">Music Performance (MUSICP)</a></li>
                             </ul>
                             <li data-localize="Near Eastern Languages and Civilization">Near Eastern Languages and Civilization</li>
                             <ul>
-                                <li><a href="?dept=ARAB">Arabic (ARAB)</a></li>
-                                <li><a href="?dept=ARAMIC">Aramaic (ARAMIC)</a></li>
-                                <li><a href="?dept=COPTIC">Coptic (COPTIC)</a></li>
-                                <li><a href="?dept=EGYPT">Egyptian (EGYPT)</a></li>
-                                <li><a href="?dept=GEEZ">Ge'ez (GEEZ)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="ARAB">Arabic (ARAB)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="ARAMIC">Aramaic (ARAMIC)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="COPTIC">Coptic (COPTIC)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="EGYPT">Egyptian (EGYPT)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="GEEZ">Ge'ez (GEEZ)</a></li>
                                 <li data-localize="Hebrew">Hebrew</li>
                                 <ul>
-                                    <li><a href="?dept=BIBHEB">Biblical Hebrew (BIBHEB)</a></li>
-                                    <li><a href="?dept=MODHEB">Modern Hebrew (MODHEB)</a></li>
+                                    <li><a href="javascript:void(0)" data-dept="BIBHEB">Biblical Hebrew (BIBHEB)</a></li>
+                                    <li><a href="javascript:void(0)" data-dept="MODHEB">Modern Hebrew (MODHEB)</a></li>
                                 </ul>
 
-                                <li><a href="?dept=NEAR E">Near Eastern Languages and Civilization (NEAR E)</a></li>
-                                <li><a href="?dept=PRSAN">Persian (PRSAN)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="NEAR E">Near Eastern Languages and Civilization (NEAR E)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="PRSAN">Persian (PRSAN)</a></li>
                                 <li>
-                                    <a href="?dept=TURKIC">Turkic (TURKIC)</a>
+                                    <a href="javascript:void(0)" data-dept="TURKIC">Turkic (TURKIC)</a>
                                     <ul>
-                                        <li><a href="?dept=CHGTAI">Chagatai (CHGTAI)</a></li>
-                                        <li><a href="?dept=KAZAKH">Kazakh (KAZAKH)</a></li>
-                                        <li><a href="?dept=KYRGYZ">Kyrgyz (KYRGYZ)</a></li>
-                                        <li><a href="?dept=UYGUR">Uygur (UYGUR)</a></li>
-                                        <li><a href="?dept=UZBEK">Uzbek (UZBEK)</a></li>
+                                        <li><a href="javascript:void(0)" data-dept="CHGTAI">Chagatai (CHGTAI)</a></li>
+                                        <li><a href="javascript:void(0)" data-dept="KAZAKH">Kazakh (KAZAKH)</a></li>
+                                        <li><a href="javascript:void(0)" data-dept="KYRGYZ">Kyrgyz (KYRGYZ)</a></li>
+                                        <li><a href="javascript:void(0)" data-dept="UYGUR">Uygur (UYGUR)</a></li>
+                                        <li><a href="javascript:void(0)" data-dept="UZBEK">Uzbek (UZBEK)</a></li>
                                     </ul>
                                 </li>
 
-                                <li><a href="?dept=TKISH">Turkish (TKISH)</a></li>
-                                <li><a href="?dept=UGARIT">Ugaritic (UGARIT)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="TKISH">Turkish (TKISH)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="UGARIT">Ugaritic (UGARIT)</a></li>
                             </ul>
                             <li data-localize="Neuroscience">Neuroscience</li>
                             <ul>
-                                <li><a href="?dept=NBIO">Neurobiology (NBIO)</a></li>
-                                <li><a href="?dept=NEUSCI">Neuroscience (NEUSCI)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="NBIO">Neurobiology (NBIO)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="NEUSCI">Neuroscience (NEUSCI)</a></li>
                             </ul>
                             <li data-localize="Philosophy">Philosophy</li>
                             <ul>
-                                <li><a href="?dept=ETHICS">Ethics (ETHICS)</a></li>
-                                <li><a href="?dept=phil">Philosophy (PHIL) </a></li>
+                                <li><a href="javascript:void(0)" data-dept="ETHICS">Ethics (ETHICS)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="phil">Philosophy (PHIL) </a></li>
                             </ul>
-                            <li><a href="?dept=phys">Physics (PHYS) </a></li>
+                            <li><a href="javascript:void(0)" data-dept="phys">Physics (PHYS) </a></li>
 
-                            <li><a href="?dept=polisci">Political Science (POL S) </a></li>
+                            <li><a href="javascript:void(0)" data-dept="polisci">Political Science (POL S) </a></li>
 
                             <li data-localize="Psychology">Psychology</li>
                             <ul>
-                                <li><a href="?dept=PSYCAP">Applied Child and Adolescent Psychology (PSYCAP)</a></li>
-                                <li><a href="?dept=PSYCLN">Clinical Psychology (PSYCLN)</a></li>
-                                <li><a href="?dept=psych">Psychology (PSYCH) </a></li>
+                                <li><a href="javascript:void(0)" data-dept="PSYCAP">Applied Child and Adolescent Psychology (PSYCAP)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="PSYCLN">Clinical Psychology (PSYCLN)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="psych">Psychology (PSYCH) </a></li>
                             </ul>
 
                             <li data-localize="Scandinavian Studies">Scandinavian Studies</li>
                             <ul>
-                                <li><a href="?dept=DANISH">Danish (DANISH)</a></li>
-                                <li><a href="?dept=ESTO">Estonian (ESTO)</a></li>
-                                <li><a href="?dept=FINN">Finnish (FINN)</a></li>
-                                <li><a href="?dept=LATV">Latvian (LATV)</a></li>
-                                <li><a href="?dept=LITH">Lithuanian (LITH)</a></li>
-                                <li><a href="?dept=NORW">Norwegian (NORW)</a></li>
-                                <li><a href="?dept=SCAND">Scandinavian (SCAND)</a></li>
-                                <li><a href="?dept=SWED">Swedish (SWED)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="DANISH">Danish (DANISH)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="ESTO">Estonian (ESTO)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="FINN">Finnish (FINN)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="LATV">Latvian (LATV)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="LITH">Lithuanian (LITH)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="NORW">Norwegian (NORW)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="SCAND">Scandinavian (SCAND)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="SWED">Swedish (SWED)</a></li>
                             </ul>
                             <li data-localize="Slavic Languages and Literatures">Slavic Languages and Literatures</li>
                             <ul>
-                                <li><a href="?dept=BCMS">Bosnian/Croatian/Montenegrin/Serbian (BCMS)</a></li>
-                                <li><a href="?dept=BULGR">Bulgarian (BULGR)</a></li>
-                                <li><a href="?dept=CZECH">Czech (CZECH)</a></li>
-                                <li><a href="?dept=POLSH">Polish (POLSH)</a></li>
-                                <li><a href="?dept=ROMN">Romanian (ROMN)</a></li>
-                                <li><a href="?dept=RUSS">Russian (RUSS)</a></li>
-                                <li><a href="?dept=SLAVIC">Slavic Languages and Literatures (SLAVIC)</a></li>
-                                <li><a href="?dept=SLVN">Slovenian (SLVN)</a></li>
-                                <li><a href="?dept=UKR">Ukrainian (UKR)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="BCMS">Bosnian/Croatian/Montenegrin/Serbian (BCMS)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="BULGR">Bulgarian (BULGR)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="CZECH">Czech (CZECH)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="POLSH">Polish (POLSH)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="ROMN">Romanian (ROMN)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="RUSS">Russian (RUSS)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="SLAVIC">Slavic Languages and Literatures (SLAVIC)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="SLVN">Slovenian (SLVN)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="UKR">Ukrainian (UKR)</a></li>
                             </ul>
-                            <li><a href="?dept=SOC">Sociology (SOC)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="SOC">Sociology (SOC)</a></li>
 
                             <li data-localize="Spanish and Portuguese Studies">Spanish and Portuguese Studies</li>
                             <ul>
-                                <li><a href="?dept=PORT">Portuguese (PORT)</a></li>
-                                <li><a href="?dept=SPAN">Spanish (SPAN)</a></li>
-                                <li><a href="?dept=SPLING">Spanish Linguistics (SPLING)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="PORT">Portuguese (PORT)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="SPAN">Spanish (SPAN)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="SPLING">Spanish Linguistics (SPLING)</a></li>
                             </ul>
-                            <li><a href="?dept=SPHSC">Speech and Hearing Sciences (SPHSC)</a></li>
-                            <li><a href="?dept=STAT">Statistics (STAT)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="SPHSC">Speech and Hearing Sciences (SPHSC)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="STAT">Statistics (STAT)</a></li>
                         </ul>
 
                         <h3 data-localize="College of Built Environments">College of Built Environments</h3>
                         <ul>
-                            <li><a href="?dept=ARCH">Architecture (ARCH)</a></li>
-                            <li><a href="?dept=B E">Built Environment (B E)</a>
+                            <li><a href="javascript:void(0)" data-dept="ARCH">Architecture (ARCH)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="B E">Built Environment (B E)</a>
                             </li>
-                            <li><a href="?dept=CM">Construction Management (CM)</a></li>
-                            <li><a href="?dept=L ARCH">Landscape Architecture (L ARCH)</a></li>
-                            <li><a href="?dept=R E">Real Estate (R E)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="CM">Construction Management (CM)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="L ARCH">Landscape Architecture (L ARCH)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="R E">Real Estate (R E)</a></li>
                             <li data-localize="Urban Planning">Urban Planning</li>
                             <ul>
-                                <li><a href="?dept=CEP">Community, Environment, and Planning (CEP)</a>
+                                <li><a href="javascript:void(0)" data-dept="CEP">Community, Environment, and Planning (CEP)</a>
                                 </li>
-                                <li><a href="?dept=IPM">Infrastructure Planning and Management (IPM)</a></li>
-                                <li><a href="?dept=SPCI">Strategic Planning for Critical Infrastructures (SPCI)</a>
+                                <li><a href="javascript:void(0)" data-dept="IPM">Infrastructure Planning and Management (IPM)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="SPCI">Strategic Planning for Critical Infrastructures (SPCI)</a>
                                 </li>
-                                <li><a href="?dept=URBDP">Urban Planning (URBDP)</a>
+                                <li><a href="javascript:void(0)" data-dept="URBDP">Urban Planning (URBDP)</a>
                                 </li>
                             </ul>
                         </ul>
 
                         <h3 data-localize="Foster School of Business">Foster School of Business</h3>
                         <ul>
-                            <li><a href="?dept=ACCTG">Accounting (ACCTG)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="ACCTG">Accounting (ACCTG)</a></li>
                             <li data-localize="Business Administration">Business Administration</li>
                             <ul>
-                                <li><a href="?dept=ADMIN">Administration (ADMIN)</a></li>
-                                <li><a href="?dept=B A">Business Administration (B A)</a></li>
-                                <li><a href="?dept=BA RM">Business Administration Research Methods (BA RM)</a></li>
-                                <li><a href="?dept=BUS AN">Business Analytics (BUS AN)</a></li>
-                                <li><a href="?dept=B CMU">Business Communications (B CMU)</a></li>
-                                <li><a href="?dept=B ECON">Business Economics (B ECON)</a></li>
-                                <li><a href="?dept=ENTRE">Entrepreneurship (ENTRE)</a></li>
-                                <li><a href="?dept=FIN">Finance (FIN)</a></li>
-                                <li><a href="?dept=I S">Information Systems (I S)</a></li>
-                                <li><a href="?dept=MSIS">Information Systems Master of Science (MSIS)</a></li>
-                                <li><a href="?dept=I BUS">International Business (I BUS)</a></li>
-                                <li><a href="?dept=MGMT">Management (MGMT)</a></li>
-                                <li><a href="?dept=MKTG">Marketing (MKTG)</a></li>
-                                <li><a href="?dept=OPMGT">Operations Management (OPMGT)</a></li>
-                                <li><a href="?dept=QMETH">Quantitative Methods (QMETH)</a></li>
-                                <li><a href="?dept=SCM">Supply Chain Management (SCM)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="ADMIN">Administration (ADMIN)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="B A">Business Administration (B A)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="BA RM">Business Administration Research Methods (BA RM)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="BUS AN">Business Analytics (BUS AN)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="B CMU">Business Communications (B CMU)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="B ECON">Business Economics (B ECON)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="ENTRE">Entrepreneurship (ENTRE)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="FIN">Finance (FIN)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="I S">Information Systems (I S)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="MSIS">Information Systems Master of Science (MSIS)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="I BUS">International Business (I BUS)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="MGMT">Management (MGMT)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="MKTG">Marketing (MKTG)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="OPMGT">Operations Management (OPMGT)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="QMETH">Quantitative Methods (QMETH)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="SCM">Supply Chain Management (SCM)</a></li>
                             </ul>
                         </ul>
 
@@ -365,218 +365,218 @@
                         <ul>
                             <li data-localize="Dentistry">Dentistry</li>
                             <ul>
-                                <li><a href="?dept=DENTCL">Dental Clinical (DENTCL)</a></li>
-                                <li><a href="?dept=DENTEL">Dental Electives (DENTEL)</a></li>
-                                <li><a href="?dept=DENTFN">Dental Foundations (DENTFN)</a></li>
-                                <li><a href="?dept=DENTGP">Dental General Practice (DENTGP)</a></li>
-                                <li><a href="?dept=D HYG">Dental Hygiene (D HYG)</a></li>
-                                <li><a href="?dept=DENTPC">Dental Pre-Clinical (DENTPC)</a></li>
-                                <li><a href="?dept=DPHS">Dental Public Health Sciences (DPHS)</a></li>
-                                <li><a href="?dept=DENTSL">Dental Selectives (DENTSL)</a></li>
-                                <li><a href="?dept=dent">Dentistry (DENT) </a></li>
-                                <li><a href="?dept=O S">Oral Surgery (O S)</a></li>
-                                <li><a href="?dept=PEDO">Pedodontics (PEDO)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="DENTCL">Dental Clinical (DENTCL)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="DENTEL">Dental Electives (DENTEL)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="DENTFN">Dental Foundations (DENTFN)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="DENTGP">Dental General Practice (DENTGP)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="D HYG">Dental Hygiene (D HYG)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="DENTPC">Dental Pre-Clinical (DENTPC)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="DPHS">Dental Public Health Sciences (DPHS)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="DENTSL">Dental Selectives (DENTSL)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="dent">Dentistry (DENT) </a></li>
+                                <li><a href="javascript:void(0)" data-dept="O S">Oral Surgery (O S)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="PEDO">Pedodontics (PEDO)</a></li>
                             </ul>
-                            <li><a href="?dept=ENDO">Endodontics (ENDO)</a></li>
-                            <li><a href="?dept=ORALB">Oral Biology (ORALB)</a></li>
-                            <li><a href="?dept=OHS">Oral Health Sciences (OHS)</a></li>
-                            <li><a href="?dept=ORALM">Oral Medicine (ORALM)</a></li>
-                            <li><a href="?dept=ORTHO">Orthodontics (ORTHO)</a></li>
-                            <li><a href="?dept=PERIO">Periodontics (PERIO)</a></li>
-                            <li><a href="?dept=PROS">Prosthodontics (PROS)</a></li>
-                            <li><a href="?dept=RES D">Restorative Dentistry (RES D)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="ENDO">Endodontics (ENDO)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="ORALB">Oral Biology (ORALB)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="OHS">Oral Health Sciences (OHS)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="ORALM">Oral Medicine (ORALM)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="ORTHO">Orthodontics (ORTHO)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="PERIO">Periodontics (PERIO)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="PROS">Prosthodontics (PROS)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="RES D">Restorative Dentistry (RES D)</a></li>
                         </ul>
 
                         <h3 data-localize="College of Education">College of Education</h3>
                         <ul>
-                            <li><a href="?dept=EDC&amp;I">Curriculum and Instruction (EDC&amp;I)</a></li>
-                            <li><a href="?dept=EDUC">College of Education (EDUC)</a></li>
-                            <li><a href="?dept=ECE">Early Care and Education (ECE)</a></li>
-                            <li><a href="?dept=ECFS">Early Childhood and Family Studies (ECFS)</a></li>
-                            <li><a href="?dept=EDTEP">Education (Teacher Education Program) (EDTEP)</a></li>
-                            <li><a href="?dept=EDLPS">Educational Leadership and Policy Studies (EDLPS)</a></li>
-                            <li><a href="?dept=EDPSY">Educational Psychology (EDPSY)</a></li>
-                            <li><a href="?dept=EDSPE">Special Education (EDSPE)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="EDC&amp;I">Curriculum and Instruction (EDC&amp;I)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="EDUC">College of Education (EDUC)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="ECE">Early Care and Education (ECE)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="ECFS">Early Childhood and Family Studies (ECFS)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="EDTEP">Education (Teacher Education Program) (EDTEP)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="EDLPS">Educational Leadership and Policy Studies (EDLPS)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="EDPSY">Educational Psychology (EDPSY)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="EDSPE">Special Education (EDSPE)</a></li>
                         </ul>
 
                         <h3 data-localize="College of Engineering">College of Engineering</h3>
                         <ul>
                             <li data-localize="Aeronautics and Astronautics">Aeronautics and Astronautics</li>
                             <ul>
-                                <li><a href="?dept=A A">Aeronautics and Astronautics (A A)</a></li>
-                                <li><a href="?dept=A E">Aerospace Engineering (A E)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="A A">Aeronautics and Astronautics (A A)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="A E">Aerospace Engineering (A E)</a></li>
                             </ul>
                             <li data-localize="Chemical Engineering">Chemical Engineering</li>
                             <ul>
-                                <li><a href="?dept=CHEM E">Chemical Engineering (CHEM E)</a></li>
-                                <li><a href="?dept=NME">Nanoscience and Molecular Engineering (NME)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="CHEM E">Chemical Engineering (CHEM E)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="NME">Nanoscience and Molecular Engineering (NME)</a></li>
                             </ul>
                             <li data-localize="Civil and Environmental Engineering">Civil and Environmental Engineering</li>
                             <ul>
-                                <li><a href="?dept=CEE">Civil and Environmental Engineering (CEE)</a></li>
-                                <li><a href="?dept=CESI">Construction, Energy, and Sustainable Infrastructure (CESI)</a></li>
-                                <li><a href="?dept=CEWA">Environmental Engineering (CEWA)</a></li>
-                                <li><a href="?dept=CESG">Structural and Geotechnical Engineering and Mechanics (CESG)</a></li>
-                                <li><a href="?dept=CET">Transportation Engineering (CET)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="CEE">Civil and Environmental Engineering (CEE)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="CESI">Construction, Energy, and Sustainable Infrastructure (CESI)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="CEWA">Environmental Engineering (CEWA)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="CESG">Structural and Geotechnical Engineering and Mechanics (CESG)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="CET">Transportation Engineering (CET)</a></li>
                             </ul>
                             <li data-localize="Computer Science and Engineering">Computer Science and Engineering</li>
                             <ul>
-                                <li><a href="?dept=CSE">Computer Science and Engineering (CSE)</a></li>
-                                <li><a href="?dept=CSE M">Computer Science and Engineering -- Accelerated Masters Program (CSE M)</a></li>
-                                <li><a href="?dept=CSE D">Computer Science and Engineering -- Data Science (CSE D)</a></li>
-                                <li><a href="?dept=CSE P">Computer Science and Engineering -- Professional Masters Program (CSE P)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="CSE">Computer Science and Engineering (CSE)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="CSE M">Computer Science and Engineering -- Accelerated Masters Program (CSE M)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="CSE D">Computer Science and Engineering -- Data Science (CSE D)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="CSE P">Computer Science and Engineering -- Professional Masters Program (CSE P)</a></li>
                             </ul>
-                            <li><a href="?dept=E E">Electrical and Computer Engineering (E E)</a></li>
-                            <li><a href="?dept=ENGR">Engineering (ENGR)</a></li>
-                            <li><a href="?dept=HCDE">Human Centered Design and Engineering (HCDE)</a></li>
-                            <li><a href="?dept=IND E">Industrial Engineering (IND E)</a></li>
-                            <li><a href="?dept=MSE">Materials Science and Engineering (MSE)</a></li>
-                            <li><a href="?dept=M E">Mechanical Engineering (M E)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="E E">Electrical and Computer Engineering (E E)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="ENGR">Engineering (ENGR)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="HCDE">Human Centered Design and Engineering (HCDE)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="IND E">Industrial Engineering (IND E)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="MSE">Materials Science and Engineering (MSE)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="M E">Mechanical Engineering (M E)</a></li>
                         </ul>
 
                         <h3 data-localize="College of the Environment">College of the Environment</h3>
                         <ul>
-                            <li><a href="?dept=FISH">Aquatic and Fishery Sciences (FISH)</a></li>
-                            <li><a href="?dept=ATM S">Atmospheric Sciences (ATM S)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="FISH">Aquatic and Fishery Sciences (FISH)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="ATM S">Atmospheric Sciences (ATM S)</a></li>
                             <li data-localize="College of the Environment">College of the Environment</li>
                             <ul>
-                                <li><a href="?dept=C ENV">College of the Environment (C ENV)</a></li>
-                                <li><a href="?dept=SCI T">Science Teaching (SCI T)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="C ENV">College of the Environment (C ENV)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="SCI T">Science Teaching (SCI T)</a></li>
                             </ul>
 
-                            <li><a href="?dept=ESS">Earth and Space Sciences (ESS)</a></li>
-                            <li><a href="?dept=ENVIR">Program on the Environment (ENVIR)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="ESS">Earth and Space Sciences (ESS)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="ENVIR">Program on the Environment (ENVIR)</a></li>
 
                             <li data-localize="School of Environmental and Forest Sciences">School of Environmental and Forest Sciences</li>
                             <ul>
-                                <li><a href="?dept=BSE">Bioresource and Science Engineering (BSE)</a></li>
-                                <li><a href="?dept=ESRM">Environmental Science and Resource Management (ESRM)</a></li>
-                                <li><a href="?dept=SEFS">School of Environmental and Forest Sciences (SEFS)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="BSE">Bioresource and Science Engineering (BSE)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="ESRM">Environmental Science and Resource Management (ESRM)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="SEFS">School of Environmental and Forest Sciences (SEFS)</a></li>
                             </ul>
-                            <li><a href="?dept=FHL">Friday Harbor Labs (FHL)</a></li>
-                            <li><a href="?dept=SMEA">School of Marine and Environmental Affairs (SMEA)</a></li>
-                            <li><a href="?dept=MARBIO">Marine Biology (MARBIO)</a></li>
-                            <li><a href="?dept=OCEAN">Oceanography (OCEAN)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="FHL">Friday Harbor Labs (FHL)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="SMEA">School of Marine and Environmental Affairs (SMEA)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="MARBIO">Marine Biology (MARBIO)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="OCEAN">Oceanography (OCEAN)</a></li>
                             <li data-localize="Center for Quantitative Science">Center for Quantitative Science</li>
                             <ul>
-                                <li><a href="?dept=Q SCI">Quantitative Science (Q SCI)</a></li>
-                                <li><a href="?dept=QERM">Quantitative Ecology and Resource Management (QERM)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="Q SCI">Quantitative Science (Q SCI)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="QERM">Quantitative Ecology and Resource Management (QERM)</a></li>
                             </ul>
-                            <li><a href="?dept=QUAT">Quaternary Sciences (QUAT)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="QUAT">Quaternary Sciences (QUAT)</a></li>
                         </ul>
 
 
                         <h3 data-localize="The Information School">The Information School</h3>
                         <ul>
-                            <li><a href="?dept=INFO">Informatics (INFO)</a></li>
-                            <li><a href="?dept=IMT">Information Management and Technology (IMT)</a></li>
-                            <li><a href="?dept=INSC">Information Science (INSC)</a></li>
-                            <li><a href="?dept=ITA">Information Technology Applications (ITA)</a></li>
-                            <li><a href="?dept=LIS">Library and Information Science (LIS)</a></li>
-                            <li><a href="?dept=LITS">Library Information Technoolgy in Schools (LITS)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="INFO">Informatics (INFO)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="IMT">Information Management and Technology (IMT)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="INSC">Information Science (INSC)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="ITA">Information Technology Applications (ITA)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="LIS">Library and Information Science (LIS)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="LITS">Library Information Technoolgy in Schools (LITS)</a></li>
                         </ul>
 
                         <h3 data-localize="Interdisciplinary Graduate Programs">Interdisciplinary Graduate Programs</h3>
                         <ul>
-                            <li><a href="?dept=BMSD">Biomolecular Structure and Design (BMSD)</a></li>
-                            <li><a href="?dept=DATA">Data Science (DATA)</a></li>
-                            <li><a href="?dept=GRDSCH">Graduate School (GRDSCH)</a></li>
-                            <li><a href="?dept=HCID">Human-Computer Interaction Design (HCID)</a></li>
-                            <li><a href="?dept=IPHD">Individual PhD (IPHD)</a></li>
-                            <li><a href="?dept=MCB">Molecular and Cellular Biology (MCB)</a></li>
-                            <li><a href="?dept=MOLENG">Molecular Engineering (MOLENG)</a></li>
-                            <li><a href="?dept=MUSEUM">Museology (MUSEUM)</a></li>
-                            <li><a href="?dept=N MES">Near and Middle Eastern Studies (N MES)</a></li>
-                            <li><a href="?dept=NEUBEH">Neurobiology and Behavior (NEUBEH)</a></li>
-                            <li><a href="?dept=NEURO">Neuroscience (NEURO)</a></li>
-                            <li><a href="?dept=NUTR">Nutritional Science (NUTR)</a></li>
-                            <li><a href="?dept=STSS">Science, Technology, and Society Studies (STSS)</a></li>
-                            <li><a href="?dept=TECHIN">Technology Innovation (TECHIN)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="BMSD">Biomolecular Structure and Design (BMSD)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="DATA">Data Science (DATA)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="GRDSCH">Graduate School (GRDSCH)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="HCID">Human-Computer Interaction Design (HCID)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="IPHD">Individual PhD (IPHD)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="MCB">Molecular and Cellular Biology (MCB)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="MOLENG">Molecular Engineering (MOLENG)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="MUSEUM">Museology (MUSEUM)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="N MES">Near and Middle Eastern Studies (N MES)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="NEUBEH">Neurobiology and Behavior (NEUBEH)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="NEURO">Neuroscience (NEURO)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="NUTR">Nutritional Science (NUTR)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="STSS">Science, Technology, and Society Studies (STSS)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="TECHIN">Technology Innovation (TECHIN)</a></li>
                         </ul>
 
                         <h3 data-localize="Interschool or Intercollege Programs">Interschool or Intercollege Programs</h3>
                         <ul>
                             <li data-localize="Bioengineering">Bioengineering</li>
                             <ul>
-                                <li><a href="?dept=BIOEN">Bioengineering (BIOEN)</a></li>
-                                <li><a href="?dept=PHARBE">Pharmaceutical Bioengineering (PHARBE)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="BIOEN">Bioengineering (BIOEN)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="PHARBE">Pharmaceutical Bioengineering (PHARBE)</a></li>
                             </ul>
 
-                            <li><a href="?dept=G H">Global Health (G H)</a></li>
-                            <li><a href="?dept=UCONJ">University Conjoint Courses (UCONJ)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="G H">Global Health (G H)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="UCONJ">University Conjoint Courses (UCONJ)</a></li>
                         </ul>
 
                         <h3 data-localize="School of Law">School of Law</h3>
                         <ul>
-                            <li><a href="?dept=LAW">Law (LAW)</a></li>
-                            <li><a href="?dept=LAW A">Law A (LAW A)</a></li>
-                            <li><a href="?dept=LAW B">Law B (LAW B)</a></li>
-                            <li><a href="?dept=LAW C">Law C (LAW C)</a></li>
-                            <li><a href="?dept=LAW E">Law E (LAW E)</a></li>
-                            <li><a href="?dept=LAW H">Law (Health) (LAW H)</a></li>
-                            <li><a href="?dept=LAW P">Law (Intellectual Property) (LAW P)</a></li>
-                            <li><a href="?dept=LAW T">Law (Taxation) (LAW T)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="LAW">Law (LAW)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="LAW A">Law A (LAW A)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="LAW B">Law B (LAW B)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="LAW C">Law C (LAW C)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="LAW E">Law E (LAW E)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="LAW H">Law (Health) (LAW H)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="LAW P">Law (Intellectual Property) (LAW P)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="LAW T">Law (Taxation) (LAW T)</a></li>
                         </ul>
 
 
                         <h3 data-localize="School of Medicine">School of Medicine</h3>
                         <ul>
-                            <li><a href="?dept=ANEST">Anesthesiology (ANEST)</a></li>
-                            <li><a href="?dept=BIOC">Biochemistry (BIOC)</a></li>
-                            <li><a href="?dept=B H">Bioethics and Humanities (B H)</a></li>
-                            <li><a href="?dept=B STR">Biological Structure (B STR)</a></li>
-                            <li><a href="?dept=BIME">Biomedical Informatics and Medical Education (BIME)</a></li>
-                            <li><a href="?dept=C MED">Comparative Medicine (C MED)</a></li>
-                            <li><a href="?dept=CONJ">Conjoint Courses (CONJ)</a></li>
-                            <li><a href="?dept=FAMED">Family Medicine (FAMED)</a></li>
-                            <li><a href="?dept=GENOME">Genome Sciences (GENOME)</a></li>
-                            <li><a href="?dept=G H">Global Health (G H)</a></li>
-                            <li><a href="?dept=HUBIO">Human Biology (HUBIO)</a></li>
-                            <li><a href="?dept=IMMUN">Immunology (IMMUN)</a></li>
-                            <li><a href="?dept=LAB M">Laboratory Medicine (LAB M)</a></li>
-                            <li><a href="?dept=MEDEX">MEDEX (MEDEX)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="ANEST">Anesthesiology (ANEST)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="BIOC">Biochemistry (BIOC)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="B H">Bioethics and Humanities (B H)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="B STR">Biological Structure (B STR)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="BIME">Biomedical Informatics and Medical Education (BIME)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="C MED">Comparative Medicine (C MED)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="CONJ">Conjoint Courses (CONJ)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="FAMED">Family Medicine (FAMED)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="GENOME">Genome Sciences (GENOME)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="G H">Global Health (G H)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="HUBIO">Human Biology (HUBIO)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="IMMUN">Immunology (IMMUN)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="LAB M">Laboratory Medicine (LAB M)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="MEDEX">MEDEX (MEDEX)</a></li>
                             <li data-localize="Medicine, Department of">Medicine, Department of</li>
                             <ul>
-                                <li><a href="?dept=MED EM">Emergency Medicine (MED EM)</a></li>
-                                <li><a href="?dept=MED">Medicine (MED)</a></li>
-                                <li><a href="?dept=MEDECK">Medicine Elective Clerkships (MEDECK)</a></li>
-                                <li><a href="?dept=MEDRCK">Medicine Required Clerkships (MEDRCK)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="MED EM">Emergency Medicine (MED EM)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="MED">Medicine (MED)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="MEDECK">Medicine Elective Clerkships (MEDECK)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="MEDRCK">Medicine Required Clerkships (MEDRCK)</a></li>
                             </ul>
 
-                            <li><a href="?dept=MEDSCI">Medical Science (MEDSCI)</a></li>
-                            <li><a href="?dept=MICROM">Microbiology (MICROM)</a></li>
-                            <li><a href="?dept=NEUR S">Neurological Surgery (NEUR S)</a></li>
-                            <li><a href="?dept=NEURL">Neurology (NEURL)</a></li>
-                            <li><a href="?dept=OB GYN">Obstetrics and Gynecology (OB GYN)</a></li>
-                            <li><a href="?dept=OPHTH">Ophthalmology (OPHTH)</a></li>
-                            <li><a href="?dept=ORTHP">Orthopaedics (ORTHP)</a></li>
-                            <li><a href="?dept=OTOHN">Otolaryngology-Head and Neck Surgery (OTOHN)</a></li>
-                            <li><a href="?dept=PATH">Pathology (PATH)</a></li>
-                            <li><a href="?dept=PEDS">Pediatrics (PEDS)</a></li>
-                            <li><a href="?dept=PHCOL">Pharmacology (PHCOL)</a></li>
-                            <li><a href="?dept=P BIO">Physiology and Biophysics (P BIO)</a></li>
-                            <li><a href="?dept=PBSCI">Psychiatry and Behavioral Sciences (PBSCI)</a></li>
-                            <li><a href="?dept=R ONC">Radiation Oncology (R ONC)</a></li>
-                            <li><a href="?dept=RADGY">Radiology (RADGY)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="MEDSCI">Medical Science (MEDSCI)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="MICROM">Microbiology (MICROM)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="NEUR S">Neurological Surgery (NEUR S)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="NEURL">Neurology (NEURL)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="OB GYN">Obstetrics and Gynecology (OB GYN)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="OPHTH">Ophthalmology (OPHTH)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="ORTHP">Orthopaedics (ORTHP)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="OTOHN">Otolaryngology-Head and Neck Surgery (OTOHN)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="PATH">Pathology (PATH)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="PEDS">Pediatrics (PEDS)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="PHCOL">Pharmacology (PHCOL)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="P BIO">Physiology and Biophysics (P BIO)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="PBSCI">Psychiatry and Behavioral Sciences (PBSCI)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="R ONC">Radiation Oncology (R ONC)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="RADGY">Radiology (RADGY)</a></li>
                             <li data-localize="Rehabilitation Medicine">Rehabilitation Medicine</li>
                             <ul>
-                                <li><a href="?dept=RHB PO">Prosthetics and Orthotics (RHB PO)</a></li>
-                                <li><a href="?dept=REHAB">Rehabilitation Medicine (REHAB)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="RHB PO">Prosthetics and Orthotics (RHB PO)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="REHAB">Rehabilitation Medicine (REHAB)</a></li>
                             </ul>
 
-                            <li><a href="?dept=SURG">Surgery (SURG)</a></li>
-                            <li><a href="?dept=UROL">Urology (UROL)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="SURG">Surgery (SURG)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="UROL">Urology (UROL)</a></li>
                         </ul>
 
                         <h3 data-localize="School of Nursing">School of Nursing</h3>
                         <ul>
                             <li data-localize="Nursing">Nursing</li>
                             <ul>
-                                <li><a href="?dept=IECMH">Infant and Early Childhood Mental Health (IECMH)</a></li>
-                                <li><a href="?dept=NSG">Nursing (NSG)</a></li>
-                                <li><a href="?dept=NURS">Nursing (NURS)</a></li>
-                                <li><a href="?dept=NCLIN">Nursing Clinical (NCLIN)</a></li>
-                                <li><a href="?dept=NMETH">Nursing Methods (NMETH)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="IECMH">Infant and Early Childhood Mental Health (IECMH)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="NSG">Nursing (NSG)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="NURS">Nursing (NURS)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="NCLIN">Nursing Clinical (NCLIN)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="NMETH">Nursing Methods (NMETH)</a></li>
                             </ul>
 
                         </ul>
@@ -585,70 +585,70 @@
                         <ul>
                             <li data-localize="School of Pharmacy">School of Pharmacy</li>
                             <ul>
-                                <li><a href="?dept=HEOR">Health Economic Outcomes Research (HEOR)</a></li>
-                                <li><a href="?dept=MEDCH">Medicinal Chemistry (MEDCH)</a></li>
-                                <li><a href="?dept=PCEUT">Pharmaceutics (PCEUT)</a></li>
-                                <li><a href="?dept=PHARM">Pharmacy (PHARM)</a></li>
-                                <li><a href="?dept=PHRMCY">Pharmacy (PHRMCY)</a></li>
-                                <li><a href="?dept=PHARMP">Pharmacy Practice (PHARMP)</a></li>
-                                <li><a href="?dept=PHRMPR">Pharmacy Practice (PHRMPR)</a></li>
-                                <li><a href="?dept=PHRMRA">Pharmacy Regulatory Affairs (PHRMRA)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="HEOR">Health Economic Outcomes Research (HEOR)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="MEDCH">Medicinal Chemistry (MEDCH)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="PCEUT">Pharmaceutics (PCEUT)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="PHARM">Pharmacy (PHARM)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="PHRMCY">Pharmacy (PHRMCY)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="PHARMP">Pharmacy Practice (PHARMP)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="PHRMPR">Pharmacy Practice (PHRMPR)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="PHRMRA">Pharmacy Regulatory Affairs (PHRMRA)</a></li>
                             </ul>
 
                         </ul>
 
                         <h3 data-localize="Daniel J. Evans School of Public Policy and Governance">Daniel J. Evans School of Public Policy and Governance</h3>
                         <ul>
-                            <li><a href="?dept=PA EX">Public Affairs Executive MPA (PA EX)</a></li>
-                            <li><a href="?dept=PUBPOL">Public Policy (PUBPOL)</a></li>
-                            <li><a href="?dept=PPM">Public Policy and Management (PPM)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="PA EX">Public Affairs Executive MPA (PA EX)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="PUBPOL">Public Policy (PUBPOL)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="PPM">Public Policy and Management (PPM)</a></li>
                         </ul>
 
                         <h3 data-localize="School of Public Health">School of Public Health</h3>
                         <ul>
-                            <li><a href="?dept=BIOST">Biostatistics (BIOST)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="BIOST">Biostatistics (BIOST)</a></li>
                             <li data-localize="Environmental and Occupational Health Sciences">Environmental and Occupational Health Sciences</li>
                             <ul>
-                                <li><a href="?dept=ENV H">Environmental Health (ENV H)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="ENV H">Environmental Health (ENV H)</a></li>
                             </ul>
 
-                            <li><a href="?dept=EPI">Epidemiology (EPI)</a></li>
-                            <li><a href="?dept=G H">Global Health (G H)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="EPI">Epidemiology (EPI)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="G H">Global Health (G H)</a></li>
                             <li data-localize="Health Services">Health Services</li>
                             <ul>
-                                <li><a href="?dept=HIHIM">Health Informatics and Health Information Management (HIHIM)</a></li>
-                                <li><a href="?dept=HSERV">Health Services (HSERV)</a></li>
-                                <li><a href="?dept=HSMGMT">Health Services Management (HSMGMT)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="HIHIM">Health Informatics and Health Information Management (HIHIM)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="HSERV">Health Services (HSERV)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="HSMGMT">Health Services Management (HSMGMT)</a></li>
                             </ul>
 
-                            <li><a href="?dept=PABIO">Pathobiology (PABIO)</a></li>
-                            <li><a href="?dept=PHG">Public Health Genetics (PHG)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="PABIO">Pathobiology (PABIO)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="PHG">Public Health Genetics (PHG)</a></li>
                             <li data-localize="School of Public Health">School of Public Health</li>
                             <ul>
-                                <li><a href="?dept=PHI">Public Health Interdisciplinary (PHI)</a></li>
-                                <li><a href="?dept=SPH">School of Public Health (SPH)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="PHI">Public Health Interdisciplinary (PHI)</a></li>
+                                <li><a href="javascript:void(0)" data-dept="SPH">School of Public Health (SPH)</a></li>
                             </ul>
 
                         </ul>
 
                         <h3 data-localize="Reserve Officers Training Corps Programs">Reserve Officers Training Corps Programs</h3>
                         <ul>
-                            <li><a href="?dept=A S">Aerospace Studies (A S)</a></li>
-                            <li><a href="?dept=M SCI">Military Science (M SCI)</a></li>
-                            <li><a href="?dept=N SCI">Naval Science (N SCI)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="A S">Aerospace Studies (A S)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="M SCI">Military Science (M SCI)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="N SCI">Naval Science (N SCI)</a></li>
                         </ul>
 
                         <h3 data-localize="Social Work">Social Work</h3>
                         <ul>
-                            <li><a href="?dept=SOC WF">Social Welfare BASW (SOC WF)</a></li>
-                            <li><a href="?dept=SOC WL">Social Welfare (SOC WL)</a></li>
-                            <li><a href="?dept=SOC W">Social Work (MSW) (SOC W)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="SOC WF">Social Welfare BASW (SOC WF)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="SOC WL">Social Welfare (SOC WL)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="SOC W">Social Work (MSW) (SOC W)</a></li>
                         </ul>
                         <h3 data-localize="Undergraduate Interdisciplinary Programs">Undergraduate Interdisciplinary Programs</h3>
                         <ul>
-                            <li><a href="?dept=ARCTIC">Arctic Studies (ARCTIC)</a></li>
-                            <li><a href="?dept=HONORS">Honors (HONORS)</a></li>
-                            <li><a href="?dept=LEAD">Leadership (LEAD)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="ARCTIC">Arctic Studies (ARCTIC)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="HONORS">Honors (HONORS)</a></li>
+                            <li><a href="javascript:void(0)" data-dept="LEAD">Leadership (LEAD)</a></li>
                         </ul>
 
                     </details>

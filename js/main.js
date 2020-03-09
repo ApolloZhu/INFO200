@@ -19,12 +19,23 @@ function collapseFiltersIfNeeded() {
 
 $(function() {
     myWorker.postMessage({
-        "query": "init"
+        "query": "init",
+        "urlParams": window.location.search
     })
     $(window).resize($.debounce(500, collapseFiltersIfNeeded));
     collapseFiltersIfNeeded();
 });
 
+$("a[data-dept]").click((e) => {
+    let url = window.location.href;
+    const dept = e.currentTarget.getAttribute('data-dept');
+    if (url.indexOf('?') > -1) {
+        url += `&dept=${dept}`
+    } else {
+        url += `?dept=${dept}`
+    }
+    window.location.href = url;
+});
 
 var lang = localStorage.getItem('language');
 $('#languages').dropdown({
@@ -45,15 +56,15 @@ $('#languages').dropdown({
     }
 }).dropdown('set selected', lang);
 
+$("#searchButton").click(populateResults);
 $('#searchBar').keyup($.throttle(750, populateResults));
 
 function populateResults() {
-    const urlParams = window.location.search;
     const query = $("#searchBar").val();
     if (query) {
         myWorker.postMessage({
-            "urlParams": urlParams,
-            "query": query
+            "query": query,
+            "urlParams": window.location.search
         });
     } else {
         $("#departments").slideDown()
@@ -67,8 +78,6 @@ myWorker.onmessage = function(event) {
     if (result) {
         $('#pagination').pagination({
             dataSource: result,
-            showGoInput: true,
-            formatGoInput: 'jump to page <%= input %>',
             callback: function(evaluations, pagination) {
                 const html = showEvaluations(evaluations);
                 $('#searchResult').html(html);
