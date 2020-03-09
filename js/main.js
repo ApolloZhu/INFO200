@@ -26,17 +26,6 @@ $(function() {
     collapseFiltersIfNeeded();
 });
 
-$("a[data-dept]").click((e) => {
-    let url = window.location.href;
-    const dept = e.currentTarget.getAttribute('data-dept');
-    if (url.indexOf('?') > -1) {
-        url += `&dept=${dept}`
-    } else {
-        url += `?dept=${dept}`
-    }
-    window.location.href = url;
-});
-
 var lang = localStorage.getItem('language');
 $('#languages').dropdown({
     fullTextSearch: true,
