@@ -58,7 +58,7 @@ function populateResults() {
     if (query) {
         myWorker.postMessage({
             "query": query,
-            "urlParams": window.location.search
+            "urlParams": $("#filters-form").serialize()
         });
     } else {
         $("#departments").slideDown()

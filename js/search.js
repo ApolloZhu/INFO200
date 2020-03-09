@@ -88,7 +88,7 @@ function search(query, filters) {
             return true
         });
         if (query) {
-            const fuse = new Fuse(evaluations, options);
+            const fuse = new Fuse(filtered, options);
             const result = fuse.search(query);
             console.log("result")
             postMessage(result)
@@ -101,6 +101,7 @@ function search(query, filters) {
             console.log(query);
             const result = globalFuse.search(query);
             postMessage(result);
+            console.log("all");
         } else {
             console.log("Yousa?")
         }
