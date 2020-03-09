@@ -29,7 +29,6 @@
                         </div>
                         <div class="scrolling menu">
                             <div class="item" data-value="en" data-english="English"><span class="description">English</span> English </div>
-                            <div class="item" data-value="fr" data-english="French"><span class="description">français</span> French </div>
                             <div class="item" data-value="cn" data-english="Chinese"><span class="description">简体中文</span> Chinese </div>
                         </div>
                     </div>
@@ -64,7 +63,6 @@
                     <form action="" id="filters-form" method="GET">
                         <fieldset>
                             <legend data-localize="campus">Campus</legend>
-                            <!--Auto detect campus?-->
                             <input type="checkbox" name="campus" id="Seattle" value="Seattle">
                             <label for="Seattle" data-localize="Seattle">Seattle</label>
                             <br>
@@ -100,6 +98,7 @@
                     <h2>Found no matching course evaluations.</h2>
                     Try search for something else or clear the filters?
                 </div>
+                <!--TODO: Auto detect campus?-->
                 <div id="departments">
                     <details class="departments" open>
                         <summary>
@@ -2346,6 +2345,16 @@
                             </li>
                         </ul>
 
+                    </details>
+                    <details class="departments">
+                        <summary>
+                            <h2 data-localize="dept-Bothell">Bothell Colleges/Schools/Programs</h2>
+                        </summary>
+                    </details>
+                    <details class="departments">
+                        <summary>
+                            <h2 data-localize="dept-Tacoma">Tacoma Colleges/Schools/Programs</h2>
+                        </summary>
                     </details>
                 </div>
 
