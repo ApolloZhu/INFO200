@@ -1,36 +1,6 @@
-var evaluations = []
-var courses = []
-var fuse;
-const options = {
-    shouldSort: true,
-    tokenize: true,
-    threshold: 0.6,
-    location: 0,
-    distance: 10,
-    maxPatternLength: 30,
-    minMatchCharLength: 3,
-    keys: ["department", "course", "section", "name", "facultyName"]
-};
+var myWorker = new Worker('./js/search.js');
 $(function() {
-    $.getJSON("./data/courses.json", function(json) {
-        courses = json;
-        $.getJSON("./data/cec.json", function(json) {
-            $.each(json, function(idx, evaluation) {
-                let name = null;
-                const department = evaluation.department;
-                const courseNumber = evaluation.course;
-                if (department in courses) {
-                    allDepartmentalCourses = courses[department]
-                    if (courseNumber in allDepartmentalCourses) {
-                        name = allDepartmentalCourses[courseNumber]['name']
-                    }
-                }
-                evaluation['name'] = name
-            });
-            evaluations = json;
-            fuse = new Fuse(evaluations, options);
-        });
-    });
+    myWorker.postMessage("init")
 });
 
 var lang = localStorage.getItem('language');
@@ -52,31 +22,35 @@ $('#languages').dropdown({
     }
 }).dropdown('set selected', lang);
 
-$('#searchBar').keyup($.throttle(750, populateResults));
+$('#searchBar').keyup($.throttle(500, populateResults));
 
 function populateResults() {
     const query = $("#searchBar").val();
     if (query) {
-        const result = fuse.search(query);
-        if (result) {
-            $('#pagination').pagination({
-                dataSource: result,
-                showGoInput: true,
-                formatGoInput: 'jump to page <%= input %>',
-                callback: function(evaluations, pagination) {
-                    const html = showEvaluations(evaluations);
-                    $('#searchResult').html(html);
-                }
-            })
-            $('#pagination').show()
-            $('#searchResult').show()
-        }
-        $("#departments").slideUp()
+        myWorker.postMessage(query);
     } else {
         $("#departments").slideDown()
         $('#searchResult').hide()
         $('#pagination').hide()
     }
+}
+
+myWorker.onmessage = function(event) {
+    const result = event.data;
+    if (result) {
+        $('#pagination').pagination({
+            dataSource: result,
+            showGoInput: true,
+            formatGoInput: 'jump to page <%= input %>',
+            callback: function(evaluations, pagination) {
+                const html = showEvaluations(evaluations);
+                $('#searchResult').html(html);
+            }
+        })
+        $('#pagination').show()
+        $('#searchResult').show()
+    }
+    $("#departments").slideUp()
 }
 
 function groupBy(list, keyGetter) {
