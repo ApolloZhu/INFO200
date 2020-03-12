@@ -61,12 +61,17 @@ $('#languages').dropdown({
 }).dropdown('set selected', lang);
 
 $("#searchButton").click(() => populateResults(true));
-$('#searchBar').keyup($.throttle(500, populateResults));
+$('#searchBar').keyup($.debounce(750, () => populateResults(false)));
 
 $("#not-found").hide()
 
+var previousQuery = "";
+
 function populateResults(force) {
     let query = $("#searchBar").val();
+    if (query == previousQuery) {
+        return;
+    }
     if (force && !query) {
         query = "search";
     }
@@ -75,6 +80,7 @@ function populateResults(force) {
             "query": query,
             "urlParams": $("#filters-form").serialize()
         });
+        previousQuery = query;
     } else {
         $("#departments").slideDown()
         $("#not-found").hide()

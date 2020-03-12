@@ -5,7 +5,6 @@
     --uw-metal-gold: #85754d;
     --uw-gold: #e8e3d3;
     --summary-background-color: var(--uw-purple);
-    /* rgb(230, 230, 230); */
 }
 
 @media (prefers-color-scheme: dark) {
@@ -13,8 +12,6 @@
         --color: white;
         --background-color: rgb(28, 28, 30);
         --dropdown-background-color: rgb(58, 58, 60);
-        /* --summary-background-color: var(--uw-metal-gold); */
-        /* rgb(80, 80, 80); */
     }
     .paginationjs .paginationjs-pages li>a {
         color: white !important;
