@@ -19,10 +19,10 @@
             </a>
             <h1 class="uw-wordmark" data-localize="cec">Course Evaluation Catalog</h1>
             <div class="right">
-                <div class="ui language dropdown right floating icon item" id="languages" data-content="Select Language">
+                <div class="ui language dropdown right floating icon item" id="languages" data-content="Select Language" aria-label="Select Language">
                     <i class="world icon"></i>
                     <div class="menu transition hidden">
-                        <div class="header" data-localize="select-language">Select Language</div>
+                        <div class="header" data-localize="select-language" aria-hidden="true">Select Language</div>
                         <div class="ui icon search input">
                             <i class="search icon"></i>
                             <input type="text" data-localize="search-languages" placeholder="Search languages...">
@@ -39,8 +39,8 @@
     <div class="container">
         <div id="search">
             <input type="text" data-localize="search-placeholder" placeholder="Search for: INFO 200" id="searchBar" autofocus>
-            <button id="searchButton"> 
-                <i class="material-icons">search</i>
+            <button id="searchButton">
+                <i class="material-icons" aria-hidden="true">search</i>
                 <span data-localize="search">Search</span>
             </button>
         </div>
@@ -56,7 +56,7 @@
                     <summary>
                         <h2 data-localize="filters">Filters</h2>
                         <span class="right">
-                            <a href="." data-localize="filters-clear">Clear</a>
+                            <a href="." data-localize="filters-clear" role="button">Clear</a>
                         </span>
                     </summary>
 
